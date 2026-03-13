@@ -1,44 +1,111 @@
-/* Thiết lập khung chứa 3 hộp */
-.menu-grid {
-    display: flex;
-    gap: 15px; /* Khoảng cách giữa các hộp */
-    margin-bottom: 30px;
-    justify-content: center; /* Căn giữa */
-}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Văn hóa Sán Chỉ - Quảng Ninh</title>
+    <style>
+        /* PHẦN 1: ĐỊNH DẠNG CHUNG */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            margin: 0; 
+            background-color: #1a365d; /* Màu xanh chàm của trang phục Sán Chỉ */
+            color: #333; 
+        }
 
-/* Trang trí từng hộp đơn lẻ */
-.menu-box {
-    background-color: white;
-    flex: 1; /* Giúp các hộp có độ rộng bằng nhau */
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s; /* Hiệu ứng mượt mà */
-    border-bottom: 5px solid #1a365d; /* Viền dưới màu xanh chàm */
-}
+        /* Thanh tiêu đề */
+        .app-header { 
+            background-color: white; 
+            color: #1a365d; 
+            padding: 20px; 
+            text-align: center; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
 
-/* Hiệu ứng khi di chuột vào hộp */
-.menu-box:hover {
-    transform: translateY(-5px); /* Hộp hơi bay lên một chút */
-    background-color: #e3f2fd; /* Đổi sang màu xanh nhạt */
-}
+        .container { 
+            padding: 20px; 
+            max-width: 800px; 
+            margin: auto; 
+        }
 
-/* Trang trí biểu tượng (Icon) */
-.menu-box .icon {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
+        /* PHẦN 2: THIẾT KẾ 3 HỘP CHỨC NĂNG */
+        .menu-grid {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
 
-.menu-box h3 {
-    margin: 10px 0 5px 0;
-    font-size: 1.1rem;
-    color: #1a365d;
-}
+        .menu-box {
+            background-color: #ffffff;
+            flex: 1;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
 
-.menu-box p {
-    font-size: 0.8rem;
-    color: #666;
-    margin: 0;
-}
+        .menu-box:hover {
+            transform: translateY(-10px); /* Hiệu ứng bay lên khi di chuột */
+            background-color: #ffd700; /* Đổi sang màu vàng khi di chuột */
+        }
+
+        .menu-box .icon { font-size: 30px; }
+        .menu-box h3 { font-size: 14px; margin: 10px 0; color: #1a365d; }
+
+        /* PHẦN 3: CÁC KHUNG NỘI DUNG */
+        .card { 
+            background: white; 
+            border-radius: 12px; 
+            padding: 20px; 
+            margin-bottom: 20px; 
+        }
+        
+        .card img { 
+            width: 100%; 
+            border-radius: 8px; 
+        }
+
+        /* Khi màn hình nhỏ (như điện thoại), 3 hộp sẽ xếp chồng lên nhau */
+        @media (max-width: 600px) {
+            .menu-grid { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-header">
+    <h1 style="margin:0">VĂN HÓA SÁN CHỈ</h1>
+    <p style="margin:5px 0 0">Di sản quý báu của tỉnh Quảng Ninh</p>
+</div>
+
+<div class="container">
+    
+    <div class="menu-grid">
+        <div class="menu-box">
+            <div class="icon">📜</div>
+            <h3>CHÍNH SÁCH</h3>
+        </div>
+
+        <div class="menu-box">
+            <div class="icon">🎎</div>
+            <h3>VĂN HÓA</h3>
+        </div>
+
+        <div class="menu-box">
+            <div class="icon">📰</div>
+            <h3>TIN TỨC</h3>
+        </div>
+    </div>
+
+    <div class="card">
+        <h2>Chào mừng bạn!</h2>
+        <p>Bấm vào các hộp phía trên để tìm hiểu về các chính sách bảo tồn, nét đẹp văn hóa và những tin tức mới nhất về đồng bào dân tộc Sán Chỉ.</p>
+        <img src="https://baoquangninh.vn/dataimages/202010/original/images2357642_DSC_1215.jpg" alt="Đồng bào Sán Chỉ">
+    </div>
+
+</div>
+
+</body>
+</html>
