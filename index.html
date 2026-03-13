@@ -3,14 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sán Chỉ Archive | Heritage & Policy</title>
-    
+    <title>Sán Chỉ Archive | Heritage & Interaction</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-    
     <style>
         :root {
-            --primary: #0f172a; /* Xanh than cực sang */
-            --accent: #ef4444;  /* Đỏ điểm nhấn */
+            --primary: #0f172a;
+            --accent: #ef4444;
             --bg: #ffffff;
             --card-bg: #f8fafc;
             --text-main: #1e293b;
@@ -18,201 +16,154 @@
         }
 
         * { box-sizing: border-box; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            margin: 0; background-color: var(--bg); 
-            color: var(--text-main); scroll-behavior: smooth; 
-        }
+        body { font-family: 'Inter', sans-serif; margin: 0; background-color: var(--bg); color: var(--text-main); scroll-behavior: smooth; }
 
-        /* --- HEADER (KIỂU BÁO CHÍ TO BẢN) --- */
-        header { 
-            max-width: 1200px; margin: 0 auto; 
-            padding: 80px 20px 40px; text-align: left;
-        }
-        header h1 { 
-            font-size: clamp(3rem, 10vw, 5rem); 
-            font-weight: 800; margin: 0; letter-spacing: -3px; 
-            line-height: 0.85; color: var(--primary); 
-        }
+        header { max-width: 1200px; margin: 0 auto; padding: 60px 20px 20px; text-align: left; }
+        header h1 { font-size: clamp(2.5rem, 8vw, 4rem); font-weight: 800; margin: 0; letter-spacing: -3px; line-height: 0.85; color: var(--primary); }
         header h1 span { color: var(--accent); }
-        header p { 
-            font-size: 1.25rem; color: var(--text-muted); 
-            margin-top: 25px; max-width: 600px; font-weight: 400; 
-        }
 
-        /* --- NAVIGATION (THANH ĐIỀU HƯỚNG MẢNH) --- */
-        .nav-bar {
-            position: sticky; top: 0; background: rgba(255,255,255,0.8);
-            backdrop-filter: blur(10px); z-index: 1000;
-            border-bottom: 1px solid #e2e8f0; padding: 20px 0;
-        }
-        .nav-container { 
-            max-width: 1200px; margin: 0 auto; padding: 0 20px;
-            display: flex; gap: 30px;
-        }
-        .nav-item { 
-            cursor: pointer; font-weight: 700; font-size: 0.8rem; 
-            text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);
-            transition: 0.2s;
-        }
-        .nav-item:hover { color: var(--primary); }
+        .nav-bar { position: sticky; top: 0; background: rgba(255,255,255,0.8); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid #e2e8f0; padding: 15px 0; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; gap: 20px; overflow-x: auto; }
+        .nav-item { cursor: pointer; font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); white-space: nowrap; transition: 0.2s; }
+        .nav-item:hover { color: var(--accent); }
 
-        /* --- GRID LAYOUT (BỐ CỤC CHÍNH) --- */
-        .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; }
-        
-        .main-grid { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
-            gap: 40px; 
-        }
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .hidden { display: none; }
 
-        /* --- CARD STYLE (KIỂU POLICY GENZ) --- */
-        .post-card { 
-            cursor: pointer; transition: transform 0.3s ease;
-        }
-        .post-card:hover { transform: translateY(-5px); }
-        
-        .img-wrapper { 
-            width: 100%; height: 250px; background: #eee; 
-            border-radius: 4px; overflow: hidden; margin-bottom: 20px;
-        }
-        .img-wrapper img { 
-            width: 100%; height: 100%; object-fit: cover; 
-            transition: 0.5s ease;
-        }
-        .post-card:hover img { transform: scale(1.05); }
+        /* GRID LAYOUT */
+        .main-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; }
+        .post-card { cursor: pointer; background: var(--card-bg); padding: 20px; border-radius: 12px; transition: 0.3s; border: 1px solid #e2e8f0; }
+        .post-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+        .tag { font-size: 0.65rem; font-weight: 800; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; display: block; }
 
-        .tag { 
-            font-size: 0.7rem; font-weight: 800; text-transform: uppercase; 
-            color: var(--accent); letter-spacing: 1px; margin-bottom: 10px; display: block;
-        }
-        .post-title { 
-            font-size: 1.5rem; font-weight: 700; margin: 0 0 10px; 
-            line-height: 1.2; color: var(--primary);
-        }
-        .post-excerpt { font-size: 1rem; color: var(--text-muted); line-height: 1.5; }
+        /* FORM & QUIZ STYLE */
+        .section-title { font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; margin-bottom: 30px; }
+        .form-group { margin-bottom: 20px; }
+        input, textarea { width: 100%; padding: 12px; border: 1px solid #e2e8f0; border-radius: 8px; font-family: inherit; font-size: 1rem; }
+        button { background: var(--primary); color: white; border: none; padding: 12px 25px; border-radius: 8px; font-weight: 700; cursor: pointer; transition: 0.2s; }
+        button:hover { background: var(--accent); }
 
-        /* --- CHI TIẾT BÀI VIẾT (DETAIL VIEW) --- */
-        .detail-view { display: none; animation: fadeIn 0.4s ease; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .quiz-card { background: #f1f5f9; padding: 20px; border-radius: 12px; margin-bottom: 20px; }
+        .quiz-option { display: block; margin: 10px 0; cursor: pointer; }
+        #quiz-result { margin-top: 20px; font-weight: 700; color: var(--accent); font-size: 1.2rem; }
 
-        .btn-back { 
-            background: none; border: 1px solid #ddd; padding: 10px 20px; 
-            border-radius: 4px; cursor: pointer; font-weight: 700; margin-bottom: 30px;
-        }
-        .btn-back:hover { background: #f1f5f9; }
-
-        .content-body { max-width: 800px; font-size: 1.1rem; line-height: 1.8; }
-        .content-body h2 { font-size: 2.5rem; margin-bottom: 30px; }
-
-        @media (max-width: 768px) {
-            header h1 { font-size: 3rem; }
-            .main-grid { grid-template-columns: 1fr; }
-        }
+        .btn-back { background: none; border: 1px solid #ddd; padding: 8px 15px; border-radius: 6px; cursor: pointer; margin-bottom: 20px; font-weight: 700; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>San Chi<br><span>Archive.</span></h1>
-        <p>Hệ thống lưu trữ số hóa di sản, văn hóa và các chính sách phát triển cộng đồng người Sán Chỉ tại Quảng Ninh.</p>
+        <h1>Interaction<br><span>Feedback.</span></h1>
     </header>
 
     <div class="nav-bar">
         <div class="nav-container">
-            <div class="nav-item" onclick="showHome()">Tất cả bài viết</div>
-            <div class="nav-item" onclick="showSection('section-policy')">Chính sách</div>
-            <div class="nav-item" onclick="showSection('section-culture')">Văn hóa</div>
-            <div class="nav-item" onclick="showSection('section-news')">Tin tức</div>
+            <div class="nav-item" onclick="showSection('home-grid')">Trang chủ</div>
+            <div class="nav-item" onclick="showSection('section-quiz')">Kiểm tra kiến thức</div>
+            <div class="nav-item" onclick="showSection('section-feedback')">Góp ý & Phản hồi</div>
         </div>
     </div>
 
     <div class="container">
         
         <div id="home-grid" class="main-grid">
+            <div class="post-card" onclick="showSection('section-quiz')">
+                <span class="tag">Hoạt động</span>
+                <h3>Bạn hiểu rõ chính sách đến đâu?</h3>
+                <p>Tham gia bài test ngắn 3 phút để kiểm tra mức độ am hiểu về bảo tồn văn hóa Sán Chỉ.</p>
+            </div>
+            <div class="post-card" onclick="showSection('section-feedback')">
+                <span class="tag">Kết nối</span>
+                <h3>Gửi ý kiến đóng góp</h3>
+                <p>Chúng tôi luôn lắng nghe phản hồi của cộng đồng để hoàn thiện dự án truyền thông.</p>
+            </div>
+        </div>
+
+        <div id="section-quiz" class="hidden">
+            <button class="btn-back" onclick="showSection('home-grid')">← Quay lại</button>
+            <h2 class="section-title">Kiểm tra mức độ hiểu chính sách</h2>
             
-            <div class="post-card" onclick="showDetail('post-1')">
-                <div class="img-wrapper">
-                    <img src="image_77b3ea.jpg" alt="Bóng đá">
-                </div>
-                <span class="tag">Tin tức</span>
-                <h3 class="post-title">Sức hút từ giải bóng đá nữ mặc váy chàm Sán Chỉ</h3>
-                <p class="post-excerpt">Khám phá nét đẹp thể thao độc bản đang thu hút hàng vạn du khách tại Bình Liêu...</p>
+            <div class="quiz-card">
+                <p><b>Câu 1: Nghị quyết số 11-NQ/TU của Tỉnh ủy Quảng Ninh tập trung vào mục tiêu gì?</b></p>
+                <label class="quiz-option"><input type="radio" name="q1" value="correct"> Xây dựng văn hóa, con người Quảng Ninh trở thành sức mạnh nội sinh.</label>
+                <label class="quiz-option"><input type="radio" name="q1" value="wrong"> Chỉ tập trung phát triển công nghiệp nặng.</label>
             </div>
 
-            <div class="post-card" onclick="showDetail('post-2')">
-                <div class="img-wrapper">
-                    <img src="image_77b3c2.jpg" alt="Soóng Cọ">
-                </div>
-                <span class="tag">Văn hóa</span>
-                <h3 class="post-title">Nghệ thuật hát Soóng Cọ: Di sản truyền đời</h3>
-                <p class="post-excerpt">Làn điệu dân ca ngọt ngào mang tâm hồn của người Sán Chỉ vùng cao Quảng Ninh...</p>
+            <div class="quiz-card">
+                <p><b>Câu 2: Nghệ thuật hát Soóng Cọ đã được công nhận là:</b></p>
+                <label class="quiz-option"><input type="radio" name="q2" value="wrong"> Di sản văn hóa thế giới.</label>
+                <label class="quiz-option"><input type="radio" name="q2" value="correct"> Di sản văn hóa phi vật thể Quốc gia.</label>
             </div>
 
-            <div class="post-card" onclick="showDetail('post-3')">
-                <div class="img-wrapper" style="background: var(--primary); display: flex; align-items: center; justify-content: center;">
-                    <span style="color: white; font-weight: 800; font-size: 2rem;">📜</span>
-                </div>
-                <span class="tag">Chính sách</span>
-                <h3 class="post-title">Nghị quyết số 11-NQ/TU: Tầm nhìn văn hóa 2030</h3>
-                <p class="post-excerpt">Chiến lược đưa văn hóa trở thành sức mạnh nội sinh phát triển kinh tế...</p>
-            </div>
+            <button onclick="submitQuiz()">Nộp bài và xem kết quả</button>
+            <div id="quiz-result"></div>
+        </div>
 
-            </div>
-
-        <div id="detail-container" class="detail-view">
-            <button class="btn-back" onclick="showHome()">← Quay lại trang chính</button>
+        <div id="section-feedback" class="hidden">
+            <button class="btn-back" onclick="showSection('home-grid')">← Quay lại</button>
+            <h2 class="section-title">Góp ý & Phản hồi</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">Ý kiến của bạn là động lực để chúng tôi bảo tồn văn hóa tốt hơn.</p>
             
-            <article id="post-1" class="content-body hidden">
-                <span class="tag">Tin tức</span>
-                <h2>Giải bóng đá nữ mặc váy chàm Sán Chỉ</h2>
-                <img src="image_77b3ea.jpg" style="width: 100%; border-radius: 8px; margin-bottom: 30px;">
-                <p>Nội dung chi tiết bài viết số 1 sẽ nằm ở đây. Bạn hãy copy nội dung từ báo chí hoặc đề tài của bạn vào đây...</p>
-                <a href="https://thanhnien.vn/co-gai-san-chi-mac-vay-da-bong-1851515510.htm" target="_blank" style="color: var(--accent); font-weight: 700;">Đọc bài viết gốc trên Báo Thanh Niên →</a>
-            </article>
-
-            <article id="post-2" class="content-body hidden">
-                <span class="tag">Văn hóa</span>
-                <h2>Nghệ thuật hát Soóng Cọ</h2>
-                <img src="image_77b3c2.jpg" style="width: 100%; border-radius: 8px; margin-bottom: 30px;">
-                <p>Chi tiết về làn điệu Soóng Cọ, các nghệ nhân và cách bảo tồn sẽ ghi ở đây...</p>
-            </article>
-
-            <article id="post-3" class="content-body hidden">
-                <span class="tag">Chính sách</span>
-                <h2>Chi tiết Nghị quyết số 11-NQ/TU</h2>
-                <p>Nội dung đầy đủ về các văn bản chính sách nhà nước về dân tộc Sán Chỉ...</p>
-            </article>
-
+            <div class="form-group">
+                <label>Họ và tên của bạn</label>
+                <input type="text" id="fb-name" placeholder="Nhập tên của bạn...">
+            </div>
+            <div class="form-group">
+                <label>Nội dung góp ý</label>
+                <textarea id="fb-message" rows="5" placeholder="Bạn muốn đóng góp điều gì cho dự án?"></textarea>
+            </div>
+            <button onclick="submitFeedback()">Gửi góp ý ngay</button>
+            <p id="fb-status" style="margin-top: 20px; color: green; display: none;">Cảm ơn bạn! Góp ý đã được ghi nhận.</p>
         </div>
 
     </div>
 
     <script>
-        function showDetail(postId) {
-            document.getElementById('home-grid').style.display = 'none';
-            document.getElementById('detail-container').style.display = 'block';
+        function showSection(sectionId) {
+            // Ẩn tất cả
+            document.getElementById('home-grid').classList.add('hidden');
+            document.getElementById('section-quiz').classList.add('hidden');
+            document.getElementById('section-feedback').classList.add('hidden');
             
-            // Ẩn tất cả các bài viết cũ
-            const articles = document.querySelectorAll('.content-body');
-            articles.forEach(a => a.classList.add('hidden'));
-            
-            // Hiện bài viết được chọn
-            document.getElementById(postId).classList.remove('hidden');
+            // Hiện phần được chọn
+            document.getElementById(sectionId).classList.remove('hidden');
             window.scrollTo(0, 0);
         }
 
-        function showHome() {
-            document.getElementById('home-grid').style.display = 'grid';
-            document.getElementById('detail-container').style.display = 'none';
-            window.scrollTo(0, 0);
+        // Logic bài Test
+        function submitQuiz() {
+            let score = 0;
+            const q1 = document.querySelector('input[name="q1"]:checked');
+            const q2 = document.querySelector('input[name="q2"]:checked');
+
+            if (!q1 || !q2) {
+                alert("Vui lòng trả lời hết các câu hỏi!");
+                return;
+            }
+
+            if (q1.value === "correct") score++;
+            if (q2.value === "correct") score++;
+
+            const resultDiv = document.getElementById('quiz-result');
+            resultDiv.innerHTML = `Kết quả: ${score}/2 câu đúng. ` + 
+                (score === 2 ? "Tuyệt vời! Bạn rất am hiểu chính sách." : "Bạn cần đọc thêm các bài viết trong chuyên mục Chính sách nhé!");
         }
 
-        // Sau này bạn có thể viết thêm logic lọc bài theo chuyên mục tại đây
-        function showSection(sectionTag) {
-            alert('Tính năng lọc bài theo ' + sectionTag + ' sẽ được cập nhật khi bạn có đủ 40 bài!');
+        // Logic Góp ý (Giả lập)
+        function submitFeedback() {
+            const name = document.getElementById('fb-name').value;
+            const msg = document.getElementById('fb-message').value;
+
+            if (!name || !msg) {
+                alert("Vui lòng điền đầy đủ thông tin!");
+                return;
+            }
+
+            // Vì GitHub Pages là trang tĩnh, không có database, chúng ta hiện thông báo giả lập
+            document.getElementById('fb-status').style.display = 'block';
+            document.getElementById('fb-name').value = "";
+            document.getElementById('fb-message').value = "";
         }
     </script>
-
 </body>
 </html>
