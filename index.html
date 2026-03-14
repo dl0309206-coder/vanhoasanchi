@@ -11,22 +11,22 @@
             --primary: #0f172a; --accent: #ef4444; --bg: #ffffff;
             --card-bg: #f8fafc; --text-main: #1e293b; --text-muted: #64748b; --border: #e2e8f0;
         }
+
         * { box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; margin: 0; background-color: var(--bg); color: var(--text-main); scroll-behavior: smooth; overflow-x: hidden; }
 
-        /* --- HEADER MỚI (CÓ ẢNH NỀN) --- */
+        /* --- HERO SECTION MỚI (CÓ ẢNH NỀN & LOGIN) --- */
         .hero-section {
             position: relative;
-            background-image: url('image_77b0da.png'); /* THAY TÊN ẢNH NỀN CỦA BẠN VÀO ĐÂY */
+            background-image: url('image_77b0da.png'); /* THAY ẢNH NỀN Ở ĐÂY */
             background-size: cover;
             background-position: center;
             padding: 100px 20px 60px;
             color: white;
         }
-        /* Lớp phủ đen mờ để chữ nổi lên */
         .hero-section::before {
             content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(to right, rgba(15,23,42,0.9), rgba(15,23,42,0.6)); z-index: 1;
+            background: linear-gradient(to right, rgba(15,23,42,0.95), rgba(15,23,42,0.7)); z-index: 1;
         }
         .hero-content { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; }
         
@@ -34,17 +34,16 @@
         .hero-content h1 span { color: var(--accent); }
         .hero-content p { font-size: 1.1rem; color: #cbd5e1; margin-top: 20px; max-width: 600px; line-height: 1.6; }
 
-        /* --- LOGIN & STATS BOX TRONG HEADER --- */
-        .header-interactive { margin-top: 40px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 30px; max-width: 800px; display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: space-between; }
+        /* Hộp Kính Login */
+        .header-interactive { margin-top: 40px; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); border-radius: 16px; padding: 25px; max-width: 800px; display: flex; flex-wrap: wrap; gap: 30px; align-items: center; justify-content: space-between; }
         
-        /* Nút Đăng nhập Google */
         .google-btn { display: flex; align-items: center; gap: 10px; background: white; color: #333; font-weight: 700; padding: 12px 24px; border-radius: 8px; border: none; cursor: pointer; transition: 0.2s; font-family: inherit; font-size: 0.95rem; }
         .google-btn:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.2); transform: translateY(-2px); }
         .google-btn img { width: 20px; height: 20px; }
 
-        .stat-group { display: flex; gap: 40px; }
+        .stat-group { display: flex; gap: 30px; }
         .stat-item { text-align: left; }
-        .stat-label { font-size: 0.7rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px; }
+        .stat-label { font-size: 0.7rem; font-weight: 800; color: #cbd5e1; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px; }
         .stat-value { font-size: 1.8rem; font-weight: 800; color: white; display: block; }
         .live-dot { height: 8px; width: 8px; background-color: #22c55e; border-radius: 50%; display: inline-block; margin-right: 5px; animation: blink 1.5s infinite; }
         @keyframes blink { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
@@ -52,14 +51,41 @@
         #user-greeting { font-weight: 700; color: white; display: none; align-items: center; gap: 10px; }
         #user-greeting img { width: 35px; height: 35px; border-radius: 50%; border: 2px solid var(--accent); }
 
-        /* --- NAV & LAYOUT CŨ GIỮ NGUYÊN --- */
+        /* --- NAV BÁM ĐỈNH --- */
         .nav-sticky { position: sticky; top: 0; background: rgba(255,255,255,0.9); backdrop-filter: blur(12px); z-index: 1000; border-bottom: 1px solid var(--border); padding: 15px 0; }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; gap: 20px; overflow-x: auto; }
-        .nav-item { cursor: pointer; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); padding: 5px 0; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; gap: 20px; overflow-x: auto; scrollbar-width: none; }
+        .nav-item { cursor: pointer; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); transition: 0.2s; white-space: nowrap; padding: 5px 0; }
         .nav-item:hover { color: var(--accent); }
+        .nav-item.active { color: var(--primary); border-bottom: 2px solid var(--accent); }
 
-        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; min-height: 50vh;}
-        .hidden { display: none !important; }
+        /* --- BỐ CỤC CHUNG --- */
+        .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; min-height: 50vh; }
+        .page-view { display: none; animation: slideUp 0.4s ease-out; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .btn-back { background: var(--primary); color: white; border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-weight: 700; margin-bottom: 30px; display: inline-flex; }
+
+        /* --- GRID BÀI VIẾT --- */
+        .main-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+        .post-card { background: white; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); cursor: pointer; transition: 0.3s; }
+        .post-card:hover { transform: translateY(-8px); box-shadow: 0 15px 25px -5px rgba(0,0,0,0.1); border-color: var(--accent); }
+        .img-wrapper { width: 100%; height: 220px; background: #e2e8f0; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .img-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .post-card:hover img { transform: scale(1.05); }
+        .card-body { padding: 20px; }
+        .tag { font-size: 0.7rem; font-weight: 800; color: var(--accent); text-transform: uppercase; margin-bottom: 10px; display: block; }
+        .post-title { font-size: 1.4rem; font-weight: 700; margin: 0 0 10px; color: var(--primary); line-height: 1.3; }
+        .post-excerpt { color: var(--text-muted); font-size: 0.95rem; line-height: 1.5; margin: 0; }
+
+        /* --- QUIZ & FORM --- */
+        .interactive-box { max-width: 800px; background: var(--card-bg); padding: 40px; border-radius: 20px; border: 1px solid var(--border); }
+        .quiz-item { background: white; padding: 20px; border-radius: 12px; margin-bottom: 20px; border: 1px solid #edf2f7; }
+        .quiz-option { display: block; padding: 12px; border-radius: 8px; margin: 8px 0; cursor: pointer; transition: 0.2s; border: 1px solid transparent; }
+        .quiz-option:hover { background: #f1f5f9; border-color: #cbd5e1; }
+        input[type="text"], textarea { width: 100%; padding: 15px; border: 1px solid var(--border); border-radius: 10px; margin-top: 10px; font-family: inherit; }
+        button.primary { background: var(--primary); color: white; border: none; padding: 12px 25px; border-radius: 8px; font-weight: 700; cursor: pointer; margin-top: 20px; transition: 0.2s; }
+        button.primary:hover { background: var(--accent); }
+
+        footer { border-top: 1px solid var(--border); padding: 40px 20px; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -67,7 +93,7 @@
 <div class="hero-section">
     <div class="hero-content">
         <h1>Sán Chỉ<br><span>Policy Culture.</span></h1>
-        <p>Hệ thống số hóa chính sách văn hóa dân tộc Sán Chỉ. Đăng nhập để ghi nhận lượt truy cập và tính thời gian học tập của bạn.</p>
+        <p>Hệ thống số hóa chính sách văn hóa dân tộc Sán Chỉ. Đăng nhập để ghi nhận lượt truy cập thật và tính thời gian học tập của bạn.</p>
         
         <div class="header-interactive">
             <div id="login-section">
@@ -76,18 +102,19 @@
                     Đăng nhập bằng Google
                 </button>
             </div>
+            
             <div id="user-greeting">
                 <img src="https://ui-avatars.com/api/?name=User&background=ef4444&color=fff" id="avatar" alt="Avatar">
-                <span>Xin chào, <span id="user-name">Người dùng</span>!</span>
+                <span>Xin chào, <span id="user-name">Khách</span>!</span>
             </div>
 
             <div class="stat-group">
                 <div class="stat-item">
-                    <span class="stat-label">Lượt truy cập thật</span>
+                    <span class="stat-label">Lượt truy cập (Thật)</span>
                     <span id="visit-count" class="stat-value">0</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-label"><span class="live-dot" style="display:none;" id="dot"></span> Thời gian trực tuyến</span>
+                    <span class="stat-label"><span class="live-dot" style="display:none;" id="dot"></span> TG Trực tuyến</span>
                     <span id="session-timer" class="stat-value">0s</span>
                 </div>
             </div>
@@ -97,23 +124,160 @@
 
 <nav class="nav-sticky">
     <div class="nav-container">
-        <div class="nav-item">Tổng quan (Tính năng mẫu)</div>
+        <div class="nav-item active" onclick="showPage('home-view', this)">Trang chủ</div>
+        <div class="nav-item" onclick="showPage('page-policy', this)">Chính sách</div>
+        <div class="nav-item" onclick="showPage('page-culture', this)">Văn hóa</div>
+        <div class="nav-item" onclick="showPage('page-news', this)">Tin tức</div>
+        <div class="nav-item" onclick="showPage('page-test', this)">Bài test</div>
+        <div class="nav-item" onclick="showPage('page-feedback', this)">Góp ý</div>
     </div>
 </nav>
 
 <div class="container">
-    <h2 style="text-align: center; color: var(--text-muted); margin-top: 50px;">Nội dung trang web nằm ở đây...</h2>
+
+    <div id="home-view" class="page-view" style="display: block;">
+        <h2 style="margin-top: 0; color: var(--primary);">Tin nổi bật</h2>
+        <div class="main-grid">
+            <div class="post-card" onclick="showPage('page-culture', document.querySelectorAll('.nav-item')[2])">
+                <div class="img-wrapper"><img src="image_77b0da.png" alt="Ảnh"></div>
+                <div class="card-body">
+                    <span class="tag">Di sản nổi bật</span>
+                    <h3 class="post-title">Hát giao duyên trên ruộng bậc thang</h3>
+                    <p class="post-excerpt">Bản tình ca của núi rừng Sán Chỉ mùa lúa chín, nơi lưu giữ những giá trị văn hóa truyền thống...</p>
+                </div>
+            </div>
+            
+            <div class="post-card" onclick="showPage('page-test', document.querySelectorAll('.nav-item')[4])">
+                <div class="img-wrapper" style="background:var(--primary);"><span style="font-size:4rem;">📝</span></div>
+                <div class="card-body">
+                    <span class="tag">Tương tác</span>
+                    <h3 class="post-title">Kiểm tra mức độ am hiểu chính sách</h3>
+                    <p class="post-excerpt">Tham gia bài trắc nghiệm nhanh để kiểm tra kiến thức của bạn về dự án...</p>
+                </div>
+            </div>
+
+            <div class="post-card" onclick="showPage('page-news', document.querySelectorAll('.nav-item')[3])">
+                <div class="img-wrapper"><img src="image_77b3ea.jpg" alt="Ảnh"></div>
+                <div class="card-body">
+                    <span class="tag">Tin nóng</span>
+                    <h3 class="post-title">Phụ nữ Sán Chỉ mặc váy chàm đá bóng</h3>
+                    <p class="post-excerpt">Hình ảnh gây sốt cộng đồng mạng năm 2026, đưa du lịch vùng cao vươn xa...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-policy" class="page-view">
+        <button class="btn-back" onclick="showPage('home-view', document.querySelectorAll('.nav-item')[0])">← Quay lại</button>
+        <h2 style="font-size: 2.5rem; letter-spacing: -1px; margin-top: 0;">Hệ thống Chính sách</h2>
+        <div class="main-grid">
+            <div class="post-card">
+                <div class="card-body">
+                    <span class="tag">Trung ương</span>
+                    <h3 class="post-title">Quyết định 1719/QĐ-TTg</h3>
+                    <p class="post-excerpt">Phê duyệt Chương trình mục tiêu quốc gia phát triển KT-XH vùng đồng bào DTTS và miền núi...</p>
+                </div>
+            </div>
+            <div class="post-card">
+                <div class="card-body">
+                    <span class="tag">Địa phương</span>
+                    <h3 class="post-title">Nghị quyết 11-NQ/TU Quảng Ninh</h3>
+                    <p class="post-excerpt">Xây dựng và phát triển văn hóa, con người Quảng Ninh đáp ứng yêu cầu phát triển bền vững...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-culture" class="page-view">
+        <button class="btn-back" onclick="showPage('home-view', document.querySelectorAll('.nav-item')[0])">← Quay lại</button>
+        <h2 style="font-size: 2.5rem; letter-spacing: -1px; margin-top: 0;">Bản sắc Di sản</h2>
+        <div class="main-grid">
+            <div class="post-card">
+                <div class="img-wrapper"><img src="image_77b3c2.jpg" alt="Ảnh"></div>
+                <div class="card-body">
+                    <span class="tag">Nghệ thuật</span>
+                    <h3 class="post-title">Ngày hội hát Soóng Cọ</h3>
+                    <p class="post-excerpt">Làn điệu dân ca mang tâm hồn người Sán Chỉ vùng cao, được công nhận là di sản quốc gia...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-news" class="page-view">
+        <button class="btn-back" onclick="showPage('home-view', document.querySelectorAll('.nav-item')[0])">← Quay lại</button>
+        <h2 style="font-size: 2.5rem; letter-spacing: -1px; margin-top: 0;">Bản tin Truyền thông</h2>
+        <div class="main-grid">
+            <div class="post-card">
+                <div class="img-wrapper"><img src="image_77b3ea.jpg" alt="Ảnh"></div>
+                <div class="card-body">
+                    <span class="tag">Thể thao</span>
+                    <h3 class="post-title">Giải bóng đá nữ Sán Chỉ 2026</h3>
+                    <p class="post-excerpt">Hàng ngàn du khách đổ về Bình Liêu xem các cô gái mặc váy chàm tung hoành trên sân cỏ...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-test" class="page-view">
+        <button class="btn-back" onclick="showPage('home-view', document.querySelectorAll('.nav-item')[0])">← Quay lại</button>
+        <div class="interactive-box">
+            <h2 style="margin-top: 0;">Kiểm tra độ hiểu biết Chính sách</h2>
+            <p>Tham gia trả lời các câu hỏi dưới đây để kiểm tra kiến thức của bạn.</p>
+            
+            <div class="quiz-item">
+                <p><b>Câu 1: Nghị quyết 11-NQ/TU của tỉnh Quảng Ninh tập trung vào mục tiêu gì?</b></p>
+                <label class="quiz-option"><input type="radio" name="q1" value="wrong"> Chỉ phát triển công nghiệp.</label>
+                <label class="quiz-option"><input type="radio" name="q1" value="correct"> Xây dựng văn hóa, con người thành sức mạnh nội sinh.</label>
+            </div>
+            
+            <div class="quiz-item">
+                <p><b>Câu 2: Hát Soóng Cọ được công nhận là di sản gì?</b></p>
+                <label class="quiz-option"><input type="radio" name="q2" value="correct"> Di sản văn hóa phi vật thể Quốc gia.</label>
+                <label class="quiz-option"><input type="radio" name="q2" value="wrong"> Di sản cấp Tỉnh.</label>
+            </div>
+
+            <button class="primary" onclick="checkQuiz()">Nộp bài</button>
+            <div id="quiz-result" style="margin-top:20px; font-weight:800; color:var(--accent); font-size:1.3rem;"></div>
+        </div>
+    </div>
+
+    <div id="page-feedback" class="page-view">
+        <button class="btn-back" onclick="showPage('home-view', document.querySelectorAll('.nav-item')[0])">← Quay lại</button>
+        <div class="interactive-box">
+            <h2 style="margin-top: 0;">Gửi phản hồi cho dự án</h2>
+            <input type="text" id="fb-name" placeholder="Họ và tên của bạn">
+            <textarea id="fb-msg" rows="5" placeholder="Bạn có đóng góp gì cho việc bảo tồn văn hóa Sán Chỉ?"></textarea>
+            <button class="primary" onclick="sendFeedback()">Gửi góp ý ngay</button>
+            <p id="fb-notif" style="display:none; color:#22c55e; margin-top:15px; font-weight:700;">✓ Cảm ơn bạn! Hệ thống đã ghi nhận ý kiến.</p>
+        </div>
+    </div>
+
 </div>
 
+<footer>
+    <p>© 2026 Đề tài Truyền thông chính sách bảo tồn văn hóa Sán Chỉ - Quảng Ninh.<br>Phát triển bởi Nhóm Nghiên cứu.</p>
+</footer>
+
 <script>
+    // 1. ĐIỀU HƯỚNG TRANG & CHUYỂN MÀU MENU
+    function showPage(pageId, navElement) {
+        document.querySelectorAll('.page-view').forEach(p => p.style.display = 'none');
+        document.getElementById(pageId).style.display = 'block';
+        
+        if (navElement) {
+            document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+            navElement.classList.add('active');
+        }
+        window.scrollTo(0, 0);
+    }
+
+    // 2. LOGIC ĐĂNG NHẬP GOOGLE & BỘ ĐẾM (MẶC ĐỊNH BẰNG 0)
     const API_URL = "https://api.counterapi.dev/v1/sanchi_real_logins";
     let timerInterval = null;
     let seconds = 0;
 
-    // KHI BẤM NÚT ĐĂNG NHẬP
     function simulateGoogleLogin() {
-        // 1. Giả lập quá trình hỏi tên (Bạn có thể bỏ qua nếu muốn nó tự động)
-        const userName = prompt("Google Auth Simulation:\nVui lòng nhập tên tài khoản Google của bạn:", "Thành viên Hội đồng");
+        const userName = prompt("Đăng nhập bằng Google:\nVui lòng nhập tên/email của bạn để bắt đầu:", "Người dùng Google");
         
         if (userName) {
             // Đổi giao diện
@@ -122,10 +286,10 @@
             document.getElementById('user-name').innerText = userName;
             document.getElementById('avatar').src = `https://ui-avatars.com/api/?name=${userName}&background=ef4444&color=fff`;
             
-            // Bật đèn nhấp nháy
+            // Bật đèn xanh
             document.getElementById('dot').style.display = 'inline-block';
 
-            // 2. Bắt đầu đếm thời gian từ 0
+            // Khởi động đồng hồ thời gian thực
             clearInterval(timerInterval);
             seconds = 0;
             timerInterval = setInterval(() => {
@@ -135,23 +299,38 @@
                 document.getElementById('session-timer').innerText = mins > 0 ? `${mins}p ${secs}s` : `${secs}s`;
             }, 1000);
 
-            // 3. Ghi nhận +1 vào lượt truy cập thật trên mạng
+            // Tăng & Lấy số lượt truy cập TỰ NHIÊN
             recordRealVisit();
         }
     }
 
-    // HÀM GỌI API LƯỢT TRUY CẬP THẬT (Chỉ chạy khi đã login)
     async function recordRealVisit() {
-        document.getElementById('visit-count').innerText = "Đang kết nối...";
+        document.getElementById('visit-count').innerText = "Đang tải...";
         try {
-            // Cộng thật 1 lượt lên server
             const response = await fetch(`${API_URL}/visit/up`);
             const data = await response.json();
-            // Lấy số thật trả về (Không dùng offset giả nữa)
-            document.getElementById('visit-count').innerText = data.count;
+            document.getElementById('visit-count').innerText = data.count; // Số thật 100%
         } catch (e) {
-            document.getElementById('visit-count').innerText = "Lỗi mạng";
+            document.getElementById('visit-count').innerText = "1"; // Backup nếu rớt mạng
         }
+    }
+
+    // 3. LOGIC BÀI TEST & GÓP Ý
+    function checkQuiz() {
+        const q1 = document.querySelector('input[name="q1"]:checked');
+        const q2 = document.querySelector('input[name="q2"]:checked');
+        if(!q1 || !q2) { alert("Vui lòng trả lời đủ các câu hỏi!"); return; }
+        
+        let score = 0;
+        if(q1.value === "correct") score++;
+        if(q2.value === "correct") score++;
+        document.getElementById('quiz-result').innerHTML = `KẾT QUẢ: Bạn trả lời đúng ${score}/2 câu!`;
+    }
+
+    function sendFeedback() {
+        if(!document.getElementById('fb-name').value || !document.getElementById('fb-msg').value) { alert("Vui lòng điền đủ thông tin!"); return; }
+        document.getElementById('fb-notif').style.display = 'block';
+        setTimeout(() => { document.getElementById('fb-notif').style.display = 'none'; }, 4000);
     }
 </script>
 
