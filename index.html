@@ -36,14 +36,14 @@
         .hero-content h1 span { color: var(--gold); } 
         .hero-content p { font-size: 1.2rem; color: #f1f5f9; margin-top: 20px; line-height: 1.6; }
 
-        /* --- NAV --- */
+        /* --- NAV CHÍNH --- */
         .nav-sticky { position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(15px); z-index: 1000; border-bottom: 2px solid var(--accent); padding: 15px 0; box-shadow: 0 4px 20px rgba(225,29,72,0.1); }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; gap: 25px; overflow-x: auto; scrollbar-width: none; justify-content: center; }
-        .nav-item { cursor: pointer; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; color: var(--primary); transition: 0.3s; white-space: nowrap; padding: 8px 15px; border-radius: 20px; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; gap: 20px; overflow-x: auto; scrollbar-width: none; justify-content: center; }
+        .nav-item { cursor: pointer; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; color: var(--primary); transition: 0.3s; white-space: nowrap; padding: 8px 15px; border-radius: 20px; }
         .nav-item:hover { color: var(--accent); background: #fff1f2; }
         .nav-item.active { color: white; background: linear-gradient(90deg, var(--accent), #f43f5e); }
 
-        /* --- CONTAINER & GRID --- */
+        /* --- NỘI DUNG --- */
         .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; min-height: 50vh; }
         .page-view { display: none; animation: slideUp 0.5s ease-out; }
         @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -53,7 +53,6 @@
 
         .main-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 35px; }
         
-        /* CARD THIẾT KẾ MỚI */
         .post-card { background: white; border-radius: 16px; overflow: hidden; border: 1px solid rgba(225,29,72,0.1); cursor: pointer; transition: 0.4s; display: flex; flex-direction: column; box-shadow: 0 10px 30px -10px rgba(0,59,115,0.08); }
         .post-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(225,29,72,0.2); border-color: var(--accent); }
         
@@ -61,21 +60,30 @@
         .img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
         
         .card-body { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; }
-        .tag { font-size: 0.75rem; font-weight: 800; color: white; background: var(--gold); padding: 5px 12px; border-radius: 20px; text-transform: uppercase; width: fit-content; }
+        .tag { font-size: 0.7rem; font-weight: 800; color: white; background: var(--gold); padding: 5px 12px; border-radius: 20px; text-transform: uppercase; width: fit-content; margin-bottom: 10px; }
         
-        .post-meta { display: flex; align-items: center; gap: 10px; margin: 10px 0; }
+        .post-meta { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
         .post-date { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
 
-        .post-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 15px; color: var(--primary); line-height: 1.3; }
-        .post-excerpt { color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin: 0 0 20px; flex-grow: 1; }
+        .post-title { font-size: 1.4rem; font-weight: 700; margin: 0 0 12px; color: var(--primary); line-height: 1.3; }
+        .post-excerpt { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin: 0 0 20px; flex-grow: 1; }
         
-        /* NÚT XEM BÀI GỐC RỰC RỠ */
-        .btn-link { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 800; text-decoration: none; font-size: 0.95rem; text-transform: uppercase; transition: 0.2s; background: #fff1f2; padding: 12px 20px; border-radius: 8px; width: fit-content; border: 1px solid transparent; }
-        .btn-link:hover { background: var(--accent); color: white; transform: scale(1.05); }
+        /* NÚT XEM BÀI GỐC */
+        .btn-link { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 800; text-decoration: none; font-size: 0.85rem; text-transform: uppercase; transition: 0.2s; background: #fff1f2; padding: 10px 18px; border-radius: 8px; width: fit-content; }
+        .btn-link:hover { background: var(--accent); color: white; }
 
-        /* BÀI TEST */
+        /* INTERACTIVE BOX (TEST & FEEDBACK) */
         .interactive-box { max-width: 800px; background: white; padding: 40px; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05); margin: 0 auto; }
-        .quiz-option { display: block; padding: 15px; border: 2px solid #e2e8f0; margin: 10px 0; cursor: pointer; border-radius: 10px; font-weight: 600; }
+        
+        /* TEST NAVIGATION BUTTONS */
+        .quiz-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; justify-content: center; }
+        .quiz-nav-btn { cursor: pointer; padding: 10px 20px; border-radius: 30px; border: 1px solid var(--border); font-weight: 700; font-size: 0.85rem; transition: 0.3s; background: white; color: var(--text-muted); }
+        .quiz-nav-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+        .quiz-content { animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .quiz-option { display: block; padding: 15px; border: 2px solid #e2e8f0; margin: 10px 0; cursor: pointer; border-radius: 10px; font-weight: 600; transition: 0.2s; }
         .quiz-option:hover { border-color: var(--accent); background: #fff1f2; }
         
         button.primary { background: linear-gradient(90deg, var(--accent), #f43f5e); color: white; border: none; padding: 15px 30px; border-radius: 10px; font-weight: 800; cursor: pointer; margin-top: 20px; width: 100%; text-transform: uppercase; }
@@ -134,7 +142,7 @@
                 <div class="img-box" style="background: linear-gradient(135deg, var(--gold), var(--accent)); font-size:5rem; color:white;">✍️</div>
                 <div class="card-body">
                     <span class="tag" style="background: var(--text-main);">Tương tác</span>
-                    <div class="post-meta"><span class="post-date">📅 Luôn cập nhật</span></div>
+                    <div class="post-meta"><span class="post-date">📅 Tuần 11</span></div>
                     <h3 class="post-title">Thử tài hiểu biết Văn hóa</h3>
                     <p class="post-excerpt">Kiểm tra ngay kiến thức của bạn về cộng đồng dân tộc Sán Chỉ.</p>
                     <span class="btn-link">Làm Test ngay →</span>
@@ -151,7 +159,7 @@
                     <span class="tag">Quyết định</span>
                     <h3 class="post-title">Quyết định số 1719/QĐ-TTg</h3>
                     <p class="post-excerpt">Chương trình mục tiêu quốc gia phát triển kinh tế - xã hội vùng đồng bào dân tộc thiểu số giai đoạn 2021 - 2030.</p>
-                    <a href="https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/10/1719.signed.pdf" target="_blank" class="btn-link">🔗 Xem văn bản gốc</a>
+                    <a href="https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/10/1719.signed.pdf" target="_blank" class="btn-link">🔗 Xem bài gốc</a>
                 </div>
             </div>
         </div>
@@ -165,7 +173,7 @@
                 <div class="card-body">
                     <span class="tag">Di sản</span>
                     <h3 class="post-title">Hát Soóng Cọ - Di sản Quốc Gia</h3>
-                    <p class="post-excerpt">Nét đẹp văn hóa đặc trưng của người Sán Chỉ ở Tiên Yên và Bình Liêu.</p>
+                    <p class="post-excerpt">Khám phá nét văn hóa đặc trưng của người Sán Chỉ tại huyện Tiên Yên.</p>
                     <a href="https://baoquangninh.vn/hat-soong-co-net-van-hoa-dac-trung-cua-nguoi-san-chi-o-tien-yen-2506384.html" target="_blank" class="btn-link">🔗 Xem bài gốc</a>
                 </div>
             </div>
@@ -179,8 +187,8 @@
                 <div class="img-box"><img src="image_77b3ea.jpeg" alt="Tin tức"></div>
                 <div class="card-body">
                     <span class="tag">Sự kiện</span>
-                    <h3 class="post-title">Lễ hội mùa vàng</h3>
-                    <p class="post-excerpt">Khám phá không gian văn hóa cộng đồng người Sán Chỉ tại mùa vàng miền biên viễn.</p>
+                    <h3 class="post-title">Lễ hội mùa vàng miền Soóng Cọ</h3>
+                    <p class="post-excerpt">Không gian văn hóa tưng bừng thu hút khách tham quan tại xã Đông Ngũ.</p>
                     <a href="https://baoquangninh.vn/le-hoi-mua-vang-mien-soong-co-xa-dong-ngu-3382791.html" target="_blank" class="btn-link">🔗 Xem bài gốc</a>
                 </div>
             </div>
@@ -188,20 +196,51 @@
     </div>
 
     <div id="page-test" class="page-view">
-        <h2 class="section-title">Kiểm tra mức độ am hiểu</h2>
+        <h2 class="section-title">Hệ thống Bài Test</h2>
+        
+        <div class="quiz-nav">
+            <div class="quiz-nav-btn active" id="btn-q1" onclick="switchQuiz(1)">Bài test 1</div>
+            <div class="quiz-nav-btn" id="btn-q2" onclick="switchQuiz(2)">Bài test 2</div>
+            <div class="quiz-nav-btn" id="btn-q3" onclick="switchQuiz(3)">Bài test 3</div>
+        </div>
+
         <div class="interactive-box">
-            <div class="quiz-question">
-                <p>Câu 1: Soóng Cọ là hình thức sinh hoạt văn hóa gì?</p>
-                <label class="quiz-option"><input type="radio" name="q1" value="correct"> Hát giao duyên đối đáp nam nữ</label>
-                <label class="quiz-option"><input type="radio" name="q1" value="wrong"> Nghi lễ tôn giáo kín</label>
+            <div id="quiz-1" class="quiz-content">
+                <h3 style="color: var(--primary);">Bài 1: Tổng quan Chính sách</h3>
+                <div class="quiz-question">
+                    <p>Câu 1: Soóng Cọ là hình thức sinh hoạt văn hóa gì?</p>
+                    <label class="quiz-option"><input type="radio" name="q1" value="correct"> Hát giao duyên đối đáp nam nữ</label>
+                    <label class="quiz-option"><input type="radio" name="q1" value="wrong"> Nghi lễ tôn giáo kín</label>
+                </div>
+                <button class="primary" onclick="checkQuiz(1)">Nộp bài Test 1</button>
             </div>
-            <button class="primary" onclick="checkQuiz()">Nộp bài</button>
-            <div id="quiz-result" style="margin-top: 20px; text-align: center; font-weight: 800;"></div>
+
+            <div id="quiz-2" class="quiz-content" style="display:none;">
+                <h3 style="color: var(--primary);">Bài 2: Kiến thức Di sản</h3>
+                <div class="quiz-question">
+                    <p>Câu 1: Nghị quyết 11-NQ/TU tập trung vào yếu tố nào là sức mạnh nội sinh?</p>
+                    <label class="quiz-option"><input type="radio" name="q2" value="correct"> Văn hóa và con người</label>
+                    <label class="quiz-option"><input type="radio" name="q2" value="wrong"> Tài nguyên khoáng sản</label>
+                </div>
+                <button class="primary" onclick="checkQuiz(2)">Nộp bài Test 2</button>
+            </div>
+
+            <div id="quiz-3" class="quiz-content" style="display:none;">
+                <h3 style="color: var(--primary);">Bài 3: Tin tức & Đời sống</h3>
+                <div class="quiz-question">
+                    <p>Câu 1: Lễ hội mùa vàng miền Soóng Cọ diễn ra tại xã nào?</p>
+                    <label class="quiz-option"><input type="radio" name="q3" value="correct"> Xã Đông Ngũ</label>
+                    <label class="quiz-option"><input type="radio" name="q3" value="wrong"> Xã Tiên Lãng</label>
+                </div>
+                <button class="primary" onclick="checkQuiz(3)">Nộp bài Test 3</button>
+            </div>
+
+            <div id="quiz-result" style="margin-top: 25px; text-align: center; font-weight: 800; font-size: 1.2rem;"></div>
         </div>
     </div>
 
     <div id="page-feedback" class="page-view">
-        <h2 class="section-title">Góp ý cho dự án</h2>
+        <h2 class="section-title">Góp ý dự án</h2>
         <div class="interactive-box">
             <input type="text" id="fb-name" placeholder="Họ và tên của bạn">
             <textarea id="fb-msg" rows="6" placeholder="Chia sẻ ý kiến của bạn..." style="width: 100%; padding: 15px; border-radius: 10px; margin-top: 15px; border: 2px solid var(--border);"></textarea>
@@ -217,6 +256,7 @@
 </footer>
 
 <script>
+    // Điều hướng trang chính
     function showPage(pageId, navElement) {
         document.querySelectorAll('.page-view').forEach(p => p.style.display = 'none');
         document.getElementById(pageId).style.display = 'block';
@@ -227,12 +267,27 @@
         window.scrollTo(0, 0);
     }
 
-    function checkQuiz() {
-        const q1 = document.querySelector('input[name="q1"]:checked');
-        if(!q1) { alert("Vui lòng chọn đáp án!"); return; }
+    // Chuyển đổi giữa các Bài Test
+    function switchQuiz(n) {
+        document.querySelectorAll('.quiz-content').forEach(q => q.style.display = 'none');
+        document.getElementById('quiz-' + n).style.display = 'block';
+        document.querySelectorAll('.quiz-nav-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('btn-q' + n).classList.add('active');
+        document.getElementById('quiz-result').innerHTML = "";
+    }
+
+    // Kiểm tra kết quả bài test
+    function checkQuiz(n) {
+        const q = document.querySelector(`input[name="q${n}"]:checked`);
+        if(!q) { alert("Vui lòng chọn đáp án!"); return; }
         const res = document.getElementById('quiz-result');
-        res.innerHTML = q1.value === "correct" ? "🎉 Chính xác!" : "❌ Thử lại nhé!";
-        res.style.color = q1.value === "correct" ? "#10b981" : "var(--accent)";
+        if(q.value === "correct") {
+            res.innerHTML = "🎉 Chính xác! Bạn đã hoàn thành bài Test " + n;
+            res.style.color = "#10b981";
+        } else {
+            res.innerHTML = "❌ Chưa đúng! Hãy xem lại kiến thức nhé.";
+            res.style.color = "var(--accent)";
+        }
     }
 
     function sendFeedback() {
