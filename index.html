@@ -8,22 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #003B73; 
-            --accent: #E11D48;  
-            --gold: #F59E0B;    
-            --bg: #f8fafc;
-            --text-main: #1e293b;
-            --text-muted: #475569;
-            --border: #e2e8f0;
+            --primary: #003B73; --accent: #E11D48; --gold: #F59E0B; --bg: #f8fafc;
+            --text-main: #1e293b; --text-muted: #475569; --border: #e2e8f0;
         }
-
         * { box-sizing: border-box; }
         body { font-family: 'Inter', sans-serif; margin: 0; background-color: var(--bg); color: var(--text-main); scroll-behavior: smooth; overflow-x: hidden; }
 
         /* --- HEADER --- */
         .hero-section {
             position: relative;
-            background-image: url('image_77b0da.jpeg'); 
+            background-image: url('image_77b0da.jpg'); 
             background-size: cover; background-position: center;
             padding: 120px 20px 80px; color: white; text-align: center;
         }
@@ -36,14 +30,29 @@
         .hero-content h1 span { color: var(--gold); } 
         .hero-content p { font-size: 1.2rem; color: #f1f5f9; margin-top: 20px; line-height: 1.6; }
 
-        /* --- NAV --- */
+        /* --- NAV & SEARCH BAR --- */
         .nav-sticky { position: sticky; top: 0; background: rgba(255,255,255,0.95); backdrop-filter: blur(15px); z-index: 1000; border-bottom: 2px solid var(--accent); padding: 15px 0; box-shadow: 0 4px 20px rgba(225,29,72,0.1); }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; gap: 25px; overflow-x: auto; scrollbar-width: none; justify-content: center; }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; gap: 20px; overflow-x: auto; scrollbar-width: none; justify-content: center; align-items: center; }
         .nav-item { cursor: pointer; font-weight: 700; font-size: 0.9rem; text-transform: uppercase; color: var(--primary); transition: 0.3s; white-space: nowrap; padding: 8px 15px; border-radius: 20px; }
         .nav-item:hover { color: var(--accent); background: #fff1f2; }
         .nav-item.active { color: white; background: linear-gradient(90deg, var(--accent), #f43f5e); }
+        
+        /* THANH TÌM KIẾM XỊN XÒ */
+        .search-box {
+            padding: 8px 15px 8px 35px; /* Chừa chỗ cho kính lúp */
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            outline: none;
+            font-family: inherit;
+            font-size: 0.85rem;
+            width: 180px;
+            transition: 0.4s;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23E11D48" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>') no-repeat 10px center;
+            background-color: white;
+        }
+        .search-box:focus { width: 250px; box-shadow: 0 0 10px rgba(225,29,72,0.2); }
 
-        /* --- CONTAINER & GRID (CUỘN DỌC TRUYỀN THỐNG) --- */
+        /* --- CONTAINER & GRID --- */
         .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; min-height: 50vh; }
         .page-view { display: none; animation: slideUp 0.5s ease-out; }
         @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -53,31 +62,14 @@
 
         .main-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 35px; }
 
-        /* --- SCROLL HORIZONTAL (CUỘN NGANG CHO TIÊU ĐIỂM) --- */
-        .scroll-horizontal {
-            display: flex;
-            overflow-x: auto;
-            gap: 30px;
-            padding-bottom: 20px;
-            scroll-snap-type: x mandatory; /* Giúp trượt mượt mà trên mobile */
-            -webkit-overflow-scrolling: touch;
-        }
-        /* Tùy chỉnh thanh cuộn ngang cho đẹp */
-        .scroll-horizontal::-webkit-scrollbar { height: 10px; }
+        /* --- SCROLL HORIZONTAL (CUỘN NGANG) --- */
+        .scroll-horizontal { display: flex; overflow-x: auto; gap: 30px; padding-bottom: 30px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+        .scroll-horizontal::-webkit-scrollbar { height: 8px; }
         .scroll-horizontal::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
         .scroll-horizontal::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+        .scroll-horizontal .post-card { width: 380px; min-width: 380px; max-width: 85vw; flex: 0 0 auto; scroll-snap-align: start; }
 
-        .scroll-horizontal .post-card {
-            min-width: 350px; /* Ép kích thước để nó không bị ép nhỏ lại */
-            flex: 0 0 auto;
-            scroll-snap-align: start;
-        }
-        /* Nếu xem trên điện thoại thì bóp nhỏ một chút */
-        @media (max-width: 768px) {
-            .scroll-horizontal .post-card { min-width: 280px; }
-        }
-        
-        /* --- CARD THIẾT KẾ MỚI --- */
+        /* --- CARD STYLE --- */
         .post-card { background: white; border-radius: 16px; overflow: hidden; border: 1px solid rgba(225,29,72,0.1); cursor: pointer; transition: 0.4s; display: flex; flex-direction: column; box-shadow: 0 10px 30px -10px rgba(0,59,115,0.08); }
         .post-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(225,29,72,0.2); border-color: var(--accent); }
         
@@ -97,20 +89,16 @@
         .btn-link { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 800; text-decoration: none; font-size: 0.95rem; text-transform: uppercase; transition: 0.2s; background: #fff1f2; padding: 12px 20px; border-radius: 8px; width: fit-content; border: 1px solid transparent; margin-top: auto;}
         .btn-link:hover { background: var(--accent); color: white; transform: scale(1.05); }
 
-        /* BÀI TEST CHUYỂN HƯỚNG */
+        /* --- BÀI TEST CHUYỂN HƯỚNG --- */
         .interactive-box { max-width: 800px; background: white; padding: 40px; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05); margin: 0 auto; }
-        
         .quiz-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; justify-content: center; }
         .quiz-nav-btn { cursor: pointer; padding: 10px 25px; border-radius: 30px; border: 2px solid var(--border); font-weight: 800; font-size: 0.95rem; background: white; color: var(--text-muted); transition: 0.3s;}
         .quiz-nav-btn:hover { border-color: var(--accent); color: var(--accent); }
         .quiz-nav-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
-        
         .quiz-content { animation: fadeIn 0.4s ease; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
         .quiz-option { display: block; padding: 15px; border: 2px solid #e2e8f0; margin: 10px 0; cursor: pointer; border-radius: 10px; font-weight: 600; transition: 0.2s; }
         .quiz-option:hover { border-color: var(--accent); background: #fff1f2; }
-        
         button.primary { background: linear-gradient(90deg, var(--accent), #f43f5e); color: white; border: none; padding: 15px 30px; border-radius: 10px; font-weight: 800; cursor: pointer; margin-top: 20px; width: 100%; text-transform: uppercase; font-size: 1rem;}
         button.primary:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(225,29,72,0.3); }
 
@@ -134,6 +122,7 @@
         <div class="nav-item" onclick="showPage('page-news', this)">Tin tức</div>
         <div class="nav-item" onclick="showPage('page-test', this)">Bài test</div>
         <div class="nav-item" onclick="showPage('page-feedback', this)">Góp ý</div>
+        <input type="text" id="searchInput" class="search-box" placeholder="Tìm tên bài viết..." onkeyup="searchPosts()">
     </div>
 </nav>
 
@@ -143,9 +132,8 @@
         <h2 class="section-title">Tiêu điểm nổi bật</h2>
         
         <div class="scroll-horizontal">
-            
             <div class="post-card">
-                <div class="img-box"><img src="image_77b3c2.jpeg" alt="Chính sách"></div>
+                <div class="img-box"><img src="image_77b3c2.jpg" alt="Chính sách"></div>
                 <div class="card-body">
                     <span class="tag" style="background: var(--primary);">Chính sách</span>
                     <div class="post-meta"><span class="post-date">📅 14/03/2026</span></div>
@@ -156,7 +144,7 @@
             </div>
 
             <div class="post-card">
-                <div class="img-box"><img src="image_77b0da.jpeg" alt="Văn hóa"></div>
+                <div class="img-box"><img src="image_77b0da.jpg" alt="Văn hóa"></div>
                 <div class="card-body">
                     <span class="tag">Văn hóa</span>
                     <div class="post-meta"><span class="post-date">📅 12/03/2026</span></div>
@@ -176,15 +164,14 @@
                     <span class="btn-link" style="background: #fff1f2; color: var(--accent);">Làm Test ngay →</span>
                 </div>
             </div>
-
-            </div>
+        </div>
     </div>
 
     <div id="page-policy" class="page-view">
         <h2 class="section-title">Hệ thống Chính sách</h2>
         <div class="main-grid">
             <div class="post-card">
-                <div class="img-box"><img src="image_77b3c2.jpeg" alt="Chính sách"></div>
+                <div class="img-box"><img src="image_77b3c2.jpg" alt="Chính sách"></div>
                 <div class="card-body">
                     <span class="tag" style="background: var(--primary);">Quyết định</span>
                     <div class="post-meta"><span class="post-date">📅 14/03/2026</span></div>
@@ -193,14 +180,14 @@
                     <a href="https://datafiles.chinhphu.vn/cpp/files/vbpq/2021/10/1719.signed.pdf" target="_blank" class="btn-link">🔗 Xem văn bản gốc</a>
                 </div>
             </div>
-            </div>
+        </div>
     </div>
 
     <div id="page-culture" class="page-view">
         <h2 class="section-title">Bản sắc Di sản</h2>
         <div class="main-grid">
             <div class="post-card">
-                <div class="img-box"><img src="image_77b0da.jpeg" alt="Văn hóa"></div>
+                <div class="img-box"><img src="image_77b0da.jpg" alt="Văn hóa"></div>
                 <div class="card-body">
                     <span class="tag">Di sản Quốc Gia</span>
                     <div class="post-meta"><span class="post-date">📅 12/03/2026</span></div>
@@ -209,14 +196,14 @@
                     <a href="https://baoquangninh.vn/hat-soong-co-net-van-hoa-dac-trung-cua-nguoi-san-chi-o-tien-yen-2506384.html" target="_blank" class="btn-link">🔗 Xem bài gốc</a>
                 </div>
             </div>
-            </div>
+        </div>
     </div>
 
     <div id="page-news" class="page-view">
         <h2 class="section-title">Tin tức & Sự kiện</h2>
         <div class="main-grid">
             <div class="post-card">
-                <div class="img-box"><img src="image_77b3ea.jpeg" alt="Tin tức"></div>
+                <div class="img-box"><img src="image_77b3ea.jpg" alt="Tin tức"></div>
                 <div class="card-body">
                     <span class="tag" style="background: #10b981;">Sự kiện</span>
                     <div class="post-meta"><span class="post-date">📅 Tuần 11</span></div>
@@ -225,20 +212,17 @@
                     <a href="https://baoquangninh.vn/le-hoi-mua-vang-mien-soong-co-xa-dong-ngu-3382791.html" target="_blank" class="btn-link">🔗 Xem bài gốc</a>
                 </div>
             </div>
-            </div>
+        </div>
     </div>
 
     <div id="page-test" class="page-view">
         <h2 class="section-title">Hệ thống Bài Test Hàng Tuần</h2>
-        
         <div class="quiz-nav">
             <div class="quiz-nav-btn" id="btn-q1" onclick="switchQuiz(1)">Bài test 1</div>
             <div class="quiz-nav-btn" id="btn-q2" onclick="switchQuiz(2)">Bài test 2</div>
             <div class="quiz-nav-btn active" id="btn-q3" onclick="switchQuiz(3)">Bài test 3 (Mới nhất)</div>
         </div>
-
         <div class="interactive-box">
-            
             <div id="quiz-1" class="quiz-content" style="display:none;">
                 <h3 style="color: var(--primary); margin-top:0;">Bài 1: Tổng quan Chính sách</h3>
                 <p style="font-weight: 700; font-size: 1.1rem;">Câu 1: Soóng Cọ là hình thức sinh hoạt văn hóa gì?</p>
@@ -246,7 +230,6 @@
                 <label class="quiz-option"><input type="radio" name="q1" value="wrong"> Nghi lễ tôn giáo kín</label>
                 <button class="primary" onclick="checkQuiz(1)">Nộp bài Test 1</button>
             </div>
-
             <div id="quiz-2" class="quiz-content" style="display:none;">
                 <h3 style="color: var(--primary); margin-top:0;">Bài 2: Kiến thức Di sản</h3>
                 <p style="font-weight: 700; font-size: 1.1rem;">Câu 1: Nghị quyết 11-NQ/TU tập trung vào yếu tố nào là sức mạnh nội sinh?</p>
@@ -254,7 +237,6 @@
                 <label class="quiz-option"><input type="radio" name="q2" value="wrong"> Tài nguyên khoáng sản</label>
                 <button class="primary" onclick="checkQuiz(2)">Nộp bài Test 2</button>
             </div>
-
             <div id="quiz-3" class="quiz-content">
                 <h3 style="color: var(--primary); margin-top:0;">Bài 3: Tin tức & Đời sống</h3>
                 <p style="font-weight: 700; font-size: 1.1rem;">Câu 1: Lễ hội mùa vàng miền Soóng Cọ diễn ra tại xã nào?</p>
@@ -262,7 +244,6 @@
                 <label class="quiz-option"><input type="radio" name="q3" value="wrong"> Xã Tiên Lãng</label>
                 <button class="primary" onclick="checkQuiz(3)">Nộp bài Test 3</button>
             </div>
-
             <div id="quiz-result" style="margin-top: 25px; text-align: center; font-weight: 800; font-size: 1.3rem;"></div>
         </div>
     </div>
@@ -279,12 +260,12 @@
 </div>
 
 <footer>
-    <p style="font-weight: 800; color: var(--primary);">TẠP CHÍ SÁN CHỈ POLICY CULTURE</p>
+    <p style="font-weight: 800; color: var(--primary);">TẠP CHÍ SÁN CHỈ POLICY Culture</p>
     <p>© 2026 Nghiệm thu Đề tài Truyền thông chính sách. Thiết kế bởi Nhóm nghiên cứu.</p>
 </footer>
 
 <script>
-    // 1. Hàm chuyển trang chính
+    // 1. CHUYỂN TRANG
     function showPage(pageId, navElement) {
         document.querySelectorAll('.page-view').forEach(p => p.style.display = 'none');
         document.getElementById(pageId).style.display = 'block';
@@ -293,30 +274,30 @@
             navElement.classList.add('active');
         }
         window.scrollTo(0, 0);
+        // Reset thanh tìm kiếm khi chuyển trang để không bị lỗi ẩn bài
+        document.getElementById('searchInput').value = '';
+        searchPosts();
     }
 
-    // 2. Hàm chuyển đổi giữa các Bài Test
+    // 2. CHUYỂN BÀI TEST
     function switchQuiz(n) {
         document.querySelectorAll('.quiz-content').forEach(q => q.style.display = 'none');
         document.getElementById('quiz-' + n).style.display = 'block';
-        
         document.querySelectorAll('.quiz-nav-btn').forEach(b => b.classList.remove('active'));
         document.getElementById('btn-q' + n).classList.add('active');
-        
-        document.getElementById('quiz-result').innerHTML = ""; // Xóa kết quả cũ khi chuyển bài
+        document.getElementById('quiz-result').innerHTML = ""; 
     }
 
-    // 3. Hàm kích hoạt Lối đi tắt (Công cụ chuyển hướng)
+    // 3. ĐI TẮT BÀI TEST
     function goToLatestQuiz(quizNumber) {
         showPage('page-test', document.querySelectorAll('.nav-item')[4]);
         switchQuiz(quizNumber);
     }
 
-    // 4. Hàm chấm điểm
+    // 4. CHẤM ĐIỂM
     function checkQuiz(n) {
         const q = document.querySelector(`input[name="q${n}"]:checked`);
         if(!q) { alert("Vui lòng chọn đáp án trước khi nộp!"); return; }
-        
         const res = document.getElementById('quiz-result');
         if(q.value === "correct") {
             res.innerHTML = "🎉 Tuyệt vời! Bạn trả lời hoàn toàn chính xác.";
@@ -327,15 +308,36 @@
         }
     }
 
-    // 5. Hàm gửi góp ý
+    // 5. GÓP Ý
     function sendFeedback() {
         if(!document.getElementById('fb-name').value || !document.getElementById('fb-msg').value) {
-            alert("Vui lòng nhập đủ thông tin bạn nhé!");
-            return;
+            alert("Vui lòng nhập đủ thông tin bạn nhé!"); return;
         }
         alert("Cảm ơn " + document.getElementById('fb-name').value + " đã đóng góp ý kiến!");
-        document.getElementById('fb-name').value = '';
-        document.getElementById('fb-msg').value = '';
+        document.getElementById('fb-name').value = ''; document.getElementById('fb-msg').value = '';
+    }
+
+    // 6. TÍNH NĂNG TÌM KIẾM CỰC XỊN XÒ (MỚI THÊM)
+    function searchPosts() {
+        // Lấy chữ người dùng gõ vào và chuyển thành chữ thường
+        let input = document.getElementById('searchInput').value.toLowerCase();
+        
+        // Chỉ tìm bài viết ở cái trang đang được mở (Ví dụ: Đang ở Trang chủ thì chỉ tìm ở Trang chủ)
+        let activePage = document.querySelector('.page-view[style*="block"]');
+        if(!activePage) return;
+        
+        // Lấy tất cả các thẻ bài viết ra
+        let cards = activePage.querySelectorAll('.post-card');
+        
+        // Lặp qua từng thẻ, thẻ nào có chữ giống thì hiện, không có thì ẩn
+        cards.forEach(card => {
+            let text = card.innerText.toLowerCase();
+            if(text.includes(input)) {
+                card.style.display = ''; // Bật lại hiển thị
+            } else {
+                card.style.display = 'none'; // Ẩn đi
+            }
+        });
     }
 </script>
 
