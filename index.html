@@ -43,7 +43,7 @@
         .nav-item:hover { color: var(--accent); background: #fff1f2; }
         .nav-item.active { color: white; background: linear-gradient(90deg, var(--accent), #f43f5e); }
 
-        /* --- CONTAINER & GRID --- */
+        /* --- CONTAINER & GRID (CUỘN DỌC TRUYỀN THỐNG) --- */
         .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; min-height: 50vh; }
         .page-view { display: none; animation: slideUp 0.5s ease-out; }
         @keyframes slideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
@@ -52,7 +52,32 @@
         .section-title::before { content: ''; display: block; width: 6px; height: 35px; background: var(--accent); border-radius: 4px; }
 
         .main-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 35px; }
+
+        /* --- SCROLL HORIZONTAL (CUỘN NGANG CHO TIÊU ĐIỂM) --- */
+        .scroll-horizontal {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding-bottom: 20px;
+            scroll-snap-type: x mandatory; /* Giúp trượt mượt mà trên mobile */
+            -webkit-overflow-scrolling: touch;
+        }
+        /* Tùy chỉnh thanh cuộn ngang cho đẹp */
+        .scroll-horizontal::-webkit-scrollbar { height: 10px; }
+        .scroll-horizontal::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 10px; }
+        .scroll-horizontal::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 10px; }
+
+        .scroll-horizontal .post-card {
+            min-width: 350px; /* Ép kích thước để nó không bị ép nhỏ lại */
+            flex: 0 0 auto;
+            scroll-snap-align: start;
+        }
+        /* Nếu xem trên điện thoại thì bóp nhỏ một chút */
+        @media (max-width: 768px) {
+            .scroll-horizontal .post-card { min-width: 280px; }
+        }
         
+        /* --- CARD THIẾT KẾ MỚI --- */
         .post-card { background: white; border-radius: 16px; overflow: hidden; border: 1px solid rgba(225,29,72,0.1); cursor: pointer; transition: 0.4s; display: flex; flex-direction: column; box-shadow: 0 10px 30px -10px rgba(0,59,115,0.08); }
         .post-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(225,29,72,0.2); border-color: var(--accent); }
         
@@ -116,7 +141,8 @@
 
     <div id="home-view" class="page-view" style="display: block;">
         <h2 class="section-title">Tiêu điểm nổi bật</h2>
-        <div class="main-grid">
+        
+        <div class="scroll-horizontal">
             
             <div class="post-card">
                 <div class="img-box"><img src="image_77b3c2.jpeg" alt="Chính sách"></div>
@@ -151,7 +177,7 @@
                 </div>
             </div>
 
-        </div>
+            </div>
     </div>
 
     <div id="page-policy" class="page-view">
