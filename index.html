@@ -17,7 +17,7 @@
         /* --- HEADER --- */
         .hero-section {
             position: relative;
-            background-image: url('image_77b0da.jpg'); 
+            background-image: url('image_77b0da.jpeg'); /* ĐÃ SỬA LẠI THÀNH .JPEG CHUẨN MAC */
             background-size: cover; background-position: center;
             padding: 120px 20px 80px; color: white; text-align: center;
         }
@@ -39,7 +39,7 @@
         
         /* THANH TÌM KIẾM XỊN XÒ */
         .search-box {
-            padding: 8px 15px 8px 35px; /* Chừa chỗ cho kính lúp */
+            padding: 8px 15px 8px 35px;
             border-radius: 20px;
             border: 1px solid var(--accent);
             outline: none;
@@ -133,7 +133,7 @@
         
         <div class="scroll-horizontal">
             <div class="post-card">
-                <div class="img-box"><img src="image_77b3c2.jpg" alt="Chính sách"></div>
+                <div class="img-box"><img src="image_77b3c2.jpeg" alt="Chính sách"></div>
                 <div class="card-body">
                     <span class="tag" style="background: var(--primary);">Chính sách</span>
                     <div class="post-meta"><span class="post-date">📅 14/03/2026</span></div>
@@ -144,7 +144,7 @@
             </div>
 
             <div class="post-card">
-                <div class="img-box"><img src="image_77b0da.jpg" alt="Văn hóa"></div>
+                <div class="img-box"><img src="image_77b0da.jpeg" alt="Văn hóa"></div>
                 <div class="card-body">
                     <span class="tag">Văn hóa</span>
                     <div class="post-meta"><span class="post-date">📅 12/03/2026</span></div>
@@ -171,7 +171,7 @@
         <h2 class="section-title">Hệ thống Chính sách</h2>
         <div class="main-grid">
             <div class="post-card">
-                <div class="img-box"><img src="image_77b3c2.jpg" alt="Chính sách"></div>
+                <div class="img-box"><img src="image_77b3c2.jpeg" alt="Chính sách"></div>
                 <div class="card-body">
                     <span class="tag" style="background: var(--primary);">Quyết định</span>
                     <div class="post-meta"><span class="post-date">📅 14/03/2026</span></div>
@@ -187,7 +187,7 @@
         <h2 class="section-title">Bản sắc Di sản</h2>
         <div class="main-grid">
             <div class="post-card">
-                <div class="img-box"><img src="image_77b0da.jpg" alt="Văn hóa"></div>
+                <div class="img-box"><img src="image_77b0da.jpeg" alt="Văn hóa"></div>
                 <div class="card-body">
                     <span class="tag">Di sản Quốc Gia</span>
                     <div class="post-meta"><span class="post-date">📅 12/03/2026</span></div>
@@ -203,7 +203,7 @@
         <h2 class="section-title">Tin tức & Sự kiện</h2>
         <div class="main-grid">
             <div class="post-card">
-                <div class="img-box"><img src="image_77b3ea.jpg" alt="Tin tức"></div>
+                <div class="img-box"><img src="image_77b3ea.jpeg" alt="Tin tức"></div>
                 <div class="card-body">
                     <span class="tag" style="background: #10b981;">Sự kiện</span>
                     <div class="post-meta"><span class="post-date">📅 Tuần 11</span></div>
@@ -260,7 +260,7 @@
 </div>
 
 <footer>
-    <p style="font-weight: 800; color: var(--primary);">TẠP CHÍ SÁN CHỈ POLICY Culture</p>
+    <p style="font-weight: 800; color: var(--primary);">TẠP CHÍ SÁN CHỈ POLICY CULTURE</p>
     <p>© 2026 Nghiệm thu Đề tài Truyền thông chính sách. Thiết kế bởi Nhóm nghiên cứu.</p>
 </footer>
 
@@ -274,7 +274,6 @@
             navElement.classList.add('active');
         }
         window.scrollTo(0, 0);
-        // Reset thanh tìm kiếm khi chuyển trang để không bị lỗi ẩn bài
         document.getElementById('searchInput').value = '';
         searchPosts();
     }
@@ -317,25 +316,19 @@
         document.getElementById('fb-name').value = ''; document.getElementById('fb-msg').value = '';
     }
 
-    // 6. TÍNH NĂNG TÌM KIẾM CỰC XỊN XÒ (MỚI THÊM)
+    // 6. TÌM KIẾM BÀI VIẾT
     function searchPosts() {
-        // Lấy chữ người dùng gõ vào và chuyển thành chữ thường
         let input = document.getElementById('searchInput').value.toLowerCase();
-        
-        // Chỉ tìm bài viết ở cái trang đang được mở (Ví dụ: Đang ở Trang chủ thì chỉ tìm ở Trang chủ)
         let activePage = document.querySelector('.page-view[style*="block"]');
         if(!activePage) return;
         
-        // Lấy tất cả các thẻ bài viết ra
         let cards = activePage.querySelectorAll('.post-card');
-        
-        // Lặp qua từng thẻ, thẻ nào có chữ giống thì hiện, không có thì ẩn
         cards.forEach(card => {
             let text = card.innerText.toLowerCase();
             if(text.includes(input)) {
-                card.style.display = ''; // Bật lại hiển thị
+                card.style.display = ''; 
             } else {
-                card.style.display = 'none'; // Ẩn đi
+                card.style.display = 'none'; 
             }
         });
     }
