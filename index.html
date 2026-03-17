@@ -88,7 +88,7 @@
         .btn-link { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 800; text-decoration: none; font-size: 0.95rem; text-transform: uppercase; transition: 0.2s; background: #fff1f2; padding: 12px 20px; border-radius: 8px; width: fit-content; border: 1px solid transparent; margin-top: auto;}
         .btn-link:hover { background: var(--accent); color: white; transform: scale(1.05); }
 
-        /* --- BÀI TEST --- */
+        /* --- BÀI TEST CHUYỂN HƯỚNG --- */
         .interactive-box { max-width: 900px; background: white; padding: 40px; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05); margin: 0 auto; }
         .quiz-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; justify-content: center; }
         .quiz-nav-btn { cursor: pointer; padding: 10px 25px; border-radius: 30px; border: 2px solid var(--border); font-weight: 800; font-size: 0.95rem; background: white; color: var(--text-muted); transition: 0.3s;}
@@ -241,26 +241,33 @@
 
     <div id="page-test" class="page-view">
         <h2 class="section-title">Hệ thống Bài Test Hàng Tuần</h2>
+        
         <div class="quiz-nav">
             <div class="quiz-nav-btn" id="btn-q1" onclick="switchQuiz(1)">Bài test 1</div>
             <div class="quiz-nav-btn" id="btn-q2" onclick="switchQuiz(2)">Bài test 2</div>
-            <div class="quiz-nav-btn active" id="btn-q3" onclick="switchQuiz(3)">Bài test 3: Quốc hội (20 Câu)</div>
+            <div class="quiz-nav-btn active" id="btn-q3" onclick="switchQuiz(3)">Bài test 3 (Mới nhất)</div>
         </div>
         
         <div class="interactive-box">
+            
             <div id="quiz-1" class="quiz-content" style="display:none;">
-                <h3 style="color: var(--primary); margin-top:0;">Bài 1: Tổng quan Chính sách</h3>
-                <p style="font-weight: 700; font-size: 1.1rem;">Câu 1: Soóng Cọ là hình thức sinh hoạt văn hóa gì?</p>
-                <label class="quiz-option"><input type="radio" name="q1" value="correct"> Hát giao duyên đối đáp nam nữ</label>
-                <label class="quiz-option"><input type="radio" name="q1" value="wrong"> Nghi lễ tôn giáo kín</label>
-                <button class="primary" onclick="checkQuiz(1)">Nộp bài Test 1</button>
+                <h3 style="color: var(--primary); margin-top:0;">Bài Test 1: Đang cập nhật</h3>
+                <p style="color: var(--text-muted); margin-bottom: 25px;">Nội dung bài test 1 sẽ sớm được cập nhật.</p>
+                <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 1: Đây là câu hỏi mẫu, đáp án đúng là A?</p>
+                    <label class="quiz-option"><input type="radio" name="q1_1" value="correct"> A. Đúng</label>
+                    <label class="quiz-option"><input type="radio" name="q1_1" value="wrong"> B. Sai</label>
+                </div>
+                <button class="primary" onclick="checkQuiz(1)">Nộp Bài</button>
             </div>
+
             <div id="quiz-2" class="quiz-content" style="display:none;">
-                <h3 style="color: var(--primary); margin-top:0;">Bài 2: Kiến thức Di sản</h3>
-                <p style="font-weight: 700; font-size: 1.1rem;">Câu 1: Nghị quyết 11-NQ/TU tập trung vào yếu tố nào là sức mạnh nội sinh?</p>
-                <label class="quiz-option"><input type="radio" name="q2" value="correct"> Văn hóa và con người</label>
-                <label class="quiz-option"><input type="radio" name="q2" value="wrong"> Tài nguyên khoáng sản</label>
-                <button class="primary" onclick="checkQuiz(2)">Nộp bài Test 2</button>
+                <h3 style="color: var(--primary); margin-top:0;">Bài Test 2: Đang cập nhật</h3>
+                <p style="color: var(--text-muted); margin-bottom: 25px;">Nội dung bài test 2 sẽ sớm được cập nhật.</p>
+                <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 1: Đây là câu hỏi mẫu, đáp án đúng là B?</p>
+                    <label class="quiz-option"><input type="radio" name="q2_1" value="wrong"> A. Sai</label>
+                    <label class="quiz-option"><input type="radio" name="q2_1" value="correct"> B. Đúng</label>
+                </div>
+                <button class="primary" onclick="checkQuiz(2)">Nộp Bài</button>
             </div>
 
             <div id="quiz-3" class="quiz-content">
@@ -328,7 +335,7 @@
                     <label class="quiz-option"><input type="radio" name="q3_10" value="wrong"> D. Ít nhất 45%.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 11: Chủ thể nào có thẩm quyền yêu cầu tổ chức kỳ họp không thường lệ (bất thường) của Quốc hội?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_11" value="correct"> A. Chủ tịch nước, Ủy ban Thường vụ Quốc hội, Thủ tướng Chính phủ hoặc ít nhất 1/3 tổng số đại biểu Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q3_11" value="correct"> A. Chủ tịch nước, UBTVQH, Thủ tướng Chính phủ hoặc ít nhất 1/3 tổng số ĐBQH.</label>
                     <label class="quiz-option"><input type="radio" name="q3_11" value="wrong"> B. Ít nhất một nửa tổng số đại biểu Quốc hội.</label>
                     <label class="quiz-option"><input type="radio" name="q3_11" value="wrong"> C. Chủ tịch Ủy ban Trung ương MTTQ Việt Nam.</label>
                     <label class="quiz-option"><input type="radio" name="q3_11" value="wrong"> D. Ban Công tác đại biểu.</label>
@@ -388,7 +395,7 @@
                     <label class="quiz-option"><input type="radio" name="q3_20" value="wrong"> D. Chánh án TAND tối cao.</label>
                 </div>
                 
-                <button class="primary" onclick="checkQuiz(3)">Nộp Bài 20 Câu Tổng Hợp</button>
+                <button class="primary" onclick="checkQuiz(3)">Nộp Bài</button>
             </div>
             
             <div id="quiz-result" style="margin-top: 25px; text-align: center; font-weight: 800; font-size: 1.3rem;"></div>
@@ -407,8 +414,8 @@
 </div>
 
 <footer>
-    <p style="font-weight: 800; color: var(--primary);">TẠP CHÍ SÁN CHỈ POLICY CULTURE</p>
-    <p>© 2026 Nghiệm thu Đề tài Truyền thông chính sách. Thiết kế bởi Nhóm nghiên cứu.</p>
+    <p style="font-weight: 800; color: var(--primary);">SÁN CHỈ POLICY CULTURE</p>
+    <p>© 2026 Nghiệm thu Đề tài Truyền thông chính sách bảo tồn và phát huy giá trị văn hoá dân tộc Sán Chỉ ở Quảng Ninh. Thiết kế bởi Nhóm nghiên cứu.</p>
 </footer>
 
 <script>
@@ -434,57 +441,48 @@
         document.getElementById('quiz-result').innerHTML = ""; 
     }
 
-    // 3. ĐI TẮT BÀI TEST
+    // 3. ĐI TẮT BÀI TEST TỪ TRANG CHỦ
     function goToLatestQuiz(quizNumber) {
         showPage('page-test', document.querySelectorAll('.nav-item')[4]);
         switchQuiz(quizNumber);
     }
 
-    // 4. CHẤM ĐIỂM (ĐÃ NÂNG CẤP ĐỂ TÍNH ĐIỂM 20 CÂU HỎI)
+    // 4. CHẤM ĐIỂM (AUTO-CHẤM DỰA TRÊN SỐ CÂU THỰC TẾ)
     function checkQuiz(n) {
-        const res = document.getElementById('quiz-result');
+        const quizContainer = document.getElementById('quiz-' + n);
+        const questions = quizContainer.querySelectorAll('.quiz-question');
+        const totalQuestions = questions.length;
         
-        if (n === 3) { 
-            // Logic riêng cho bài test 20 câu
-            let score = 0;
-            let totalQuestions = 20;
-            let answered = 0;
-            
-            for(let i = 1; i <= totalQuestions; i++) {
-                let q = document.querySelector(`input[name="q3_${i}"]:checked`);
-                if(q) {
-                    answered++;
-                    if(q.value === "correct") score++;
-                }
+        let score = 0;
+        let answered = 0;
+
+        // Vòng lặp đếm tự động
+        questions.forEach((qDiv) => {
+            const checkedOption = qDiv.querySelector('input[type="radio"]:checked');
+            if (checkedOption) {
+                answered++;
+                if (checkedOption.value === "correct") score++;
             }
-            
-            if(answered < totalQuestions) {
-                alert(`Bạn mới trả lời ${answered}/${totalQuestions} câu. Hãy làm đủ các câu trước khi nộp bài nhé!`);
-                return;
-            }
-            
-            if(score === totalQuestions) {
-                res.innerHTML = `🎉 Đỉnh quá! Bạn đúng tuyệt đối ${score}/${totalQuestions} câu!`;
-                res.style.color = "#10b981";
-            } else if (score >= 10) {
-                res.innerHTML = `👍 Rất tốt! Bạn đúng ${score}/${totalQuestions} câu.`;
-                res.style.color = "var(--primary)";
-            } else {
-                res.innerHTML = `⭐ Bạn đúng ${score}/${totalQuestions} câu. Cố gắng ôn tập lại kiến thức nhé!`;
-                res.style.color = "var(--accent)";
-            }
-            
+        });
+
+        const res = document.getElementById('quiz-result');
+
+        // Bắt lỗi làm thiếu câu
+        if (answered < totalQuestions) {
+            alert(`Bạn mới làm ${answered}/${totalQuestions} câu. Hãy chọn đủ đáp án rồi mới nộp nhé!`);
+            return;
+        }
+
+        // Logic xuất điểm
+        if (score === totalQuestions) {
+            res.innerHTML = `🎉 Đỉnh quá! Bạn đúng tuyệt đối ${score}/${totalQuestions} câu!`;
+            res.style.color = "#10b981";
+        } else if (score >= totalQuestions / 2) {
+            res.innerHTML = `👍 Rất tốt! Bạn đúng ${score}/${totalQuestions} câu.`;
+            res.style.color = "var(--primary)";
         } else {
-            // Logic cũ cho bài test 1 câu
-            const q = document.querySelector(`input[name="q${n}"]:checked`);
-            if(!q) { alert("Vui lòng chọn đáp án trước khi nộp!"); return; }
-            if(q.value === "correct") {
-                res.innerHTML = "🎉 Tuyệt vời! Bạn trả lời hoàn toàn chính xác.";
-                res.style.color = "#10b981";
-            } else {
-                res.innerHTML = "❌ Chưa đúng rồi! Bạn đọc lại bài viết trên web nhé.";
-                res.style.color = "var(--accent)";
-            }
+            res.innerHTML = `⭐ Bạn đúng ${score}/${totalQuestions} câu. Cố gắng ôn tập thêm nhé!`;
+            res.style.color = "var(--accent)";
         }
     }
 
