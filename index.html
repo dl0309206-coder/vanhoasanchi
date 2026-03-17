@@ -17,7 +17,7 @@
         /* --- HEADER --- */
         .hero-section {
             position: relative;
-            background-image: url('nhomnghiencuu.jpeg'); /* ĐÃ SỬA LẠI THÀNH .JPEG CHUẨN MAC */
+            background-image: url('nhomnghiencuu.jpeg'); 
             background-size: cover; background-position: center;
             padding: 120px 20px 80px; color: white; text-align: center;
         }
@@ -37,7 +37,6 @@
         .nav-item:hover { color: var(--accent); background: #fff1f2; }
         .nav-item.active { color: white; background: linear-gradient(90deg, var(--accent), #f43f5e); }
         
-        /* THANH TÌM KIẾM XỊN XÒ */
         .search-box {
             padding: 8px 15px 8px 35px;
             border-radius: 20px;
@@ -84,7 +83,7 @@
         .post-date { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
 
         .post-title { font-size: 1.5rem; font-weight: 700; margin: 0 0 15px; color: var(--primary); line-height: 1.3; }
-        .post-excerpt { color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin: 0 0 20px; flex-grow: 1; }
+        .post-excerpt { color: var(--text-muted); font-size: 1rem; line-height: 1.6; margin: 0 0 20px; flex-grow: 1; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden;}
         
         .btn-link { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 800; text-decoration: none; font-size: 0.95rem; text-transform: uppercase; transition: 0.2s; background: #fff1f2; padding: 12px 20px; border-radius: 8px; width: fit-content; border: 1px solid transparent; margin-top: auto;}
         .btn-link:hover { background: var(--accent); color: white; transform: scale(1.05); }
@@ -131,18 +130,19 @@
     <div id="home-view" class="page-view" style="display: block;">
         <h2 class="section-title">Tiêu điểm nổi bật</h2>
         
-        <div class="scroll-horizontal"></div>
+        <div class="scroll-horizontal">
+            
             <div class="post-card">
                 <div class="img-box"><img src="bau-cu.jpeg" alt="Tin tức"></div>
                 <div class="card-body">
                     <span class="tag" style="background: var(--primary);">Tin tức</span>
                     <div class="post-meta"><span class="post-date">📅 16/03/2026</span></div>
                     <h3 class="post-title">Mỗi lá phiếu - Mỗi niềm tin</h3>
-                    <p class="post-excerpt">Ngày bầu cử là hoạt động chính trị định kỳ để cử tri thực hiện quyền dân chủ thông qua việc bỏ phiếu lựa chọn đại biểu vào bộ máy nhà nước. Sự kiện này được tiến hành theo các nguyên tắc pháp lý nghiêm ngặt nhằm bảo đảm tính khách quan và minh bạch. Kết quả bầu cử là cơ sở hình thành cơ quan quyền lực, thể hiện ý chí của nhân dân trong việc xây dựng và quản lý quốc gia.</p>
+                    <p class="post-excerpt">Ngày bầu cử là hoạt động chính trị định kỳ để cử tri thực hiện quyền dân chủ thông qua việc bỏ phiếu lựa chọn đại biểu vào bộ máy nhà nước. Sự kiện này được tiến hành theo các nguyên tắc pháp lý nghiêm ngặt nhằm bảo đảm tính khách quan và minh bạch.</p>
                     <a href="https://vov.vn/chinh-tri/tuong-thuat-truc-tiep-ngay-hoi-toan-dan-1532026-post1275702.vov" target="_blank" class="btn-link">🔗 Xem bài gốc</a>
                 </div>
             </div>
-        
+            
             <div class="post-card">
                 <div class="img-box"><img src="image_77b3c2.jpeg" alt="Chính sách"></div>
                 <div class="card-body">
@@ -175,8 +175,8 @@
                     <span class="btn-link" style="background: #fff1f2; color: var(--accent);">Làm Test ngay →</span>
                 </div>
             </div>
-        </div>
-    </div>
+
+        </div> </div>
 
     <div id="page-policy" class="page-view">
         <h2 class="section-title">Hệ thống Chính sách</h2>
@@ -204,7 +204,7 @@
                     <div class="post-meta"><span class="post-date">📅 12/03/2026</span></div>
                     <h3 class="post-title">Hát Soóng Cọ - Di sản Quốc Gia</h3>
                     <p class="post-excerpt">Nét đẹp văn hóa đặc trưng của người Sán Chỉ ở Tiên Yên và Bình Liêu.</p>
-                    <a href="https:/baoquangninh.vn/hat-soong-co-net-van-hoa-dac-trung-cua-nguoi-san-chi-o-tien-yen-2506384.html" target="_blank" class="btn-link">🔗 Xem bài gốc</a>
+                    <a href="https://baoquangninh.vn/hat-soong-co-net-van-hoa-dac-trung-cua-nguoi-san-chi-o-tien-yen-2506384.html" target="_blank" class="btn-link">🔗 Xem bài gốc</a>
                 </div>
             </div>
         </div>
@@ -213,6 +213,18 @@
     <div id="page-news" class="page-view">
         <h2 class="section-title">Tin tức & Sự kiện</h2>
         <div class="main-grid">
+            
+            <div class="post-card">
+                <div class="img-box"><img src="bau-cu.jpeg" alt="Tin tức"></div>
+                <div class="card-body">
+                    <span class="tag" style="background: var(--primary);">Tin tức</span>
+                    <div class="post-meta"><span class="post-date">📅 16/03/2026</span></div>
+                    <h3 class="post-title">Mỗi lá phiếu - Mỗi niềm tin</h3>
+                    <p class="post-excerpt">Ngày bầu cử là hoạt động chính trị định kỳ để cử tri thực hiện quyền dân chủ thông qua việc bỏ phiếu lựa chọn đại biểu vào bộ máy nhà nước. Sự kiện này được tiến hành theo các nguyên tắc pháp lý nghiêm ngặt nhằm bảo đảm tính khách quan và minh bạch.</p>
+                    <a href="https://vov.vn/chinh-tri/tuong-thuat-truc-tiep-ngay-hoi-toan-dan-1532026-post1275702.vov" target="_blank" class="btn-link">🔗 Xem bài gốc</a>
+                </div>
+            </div>
+
             <div class="post-card">
                 <div class="img-box"><img src="image_77b3ea.jpeg" alt="Tin tức"></div>
                 <div class="card-body">
@@ -223,6 +235,7 @@
                     <a href="https://baoquangninh.vn/le-hoi-mua-vang-mien-soong-co-xa-dong-ngu-3382791.html" target="_blank" class="btn-link">🔗 Xem bài gốc</a>
                 </div>
             </div>
+            
         </div>
     </div>
 
