@@ -88,7 +88,7 @@
         .btn-link { display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 800; text-decoration: none; font-size: 0.95rem; text-transform: uppercase; transition: 0.2s; background: #fff1f2; padding: 12px 20px; border-radius: 8px; width: fit-content; border: 1px solid transparent; margin-top: auto;}
         .btn-link:hover { background: var(--accent); color: white; transform: scale(1.05); }
 
-        /* --- BÀI TEST CHUYỂN HƯỚNG --- */
+        /* --- BÀI TEST --- */
         .interactive-box { max-width: 900px; background: white; padding: 40px; border-radius: 20px; border: 1px solid var(--border); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.05); margin: 0 auto; }
         .quiz-nav { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px; justify-content: center; }
         .quiz-nav-btn { cursor: pointer; padding: 10px 25px; border-radius: 30px; border: 2px solid var(--border); font-weight: 800; font-size: 0.95rem; background: white; color: var(--text-muted); transition: 0.3s;}
@@ -167,7 +167,7 @@
                 </div>
             </div>
 
-            <div class="post-card" onclick="goToLatestQuiz(3)">
+            <div class="post-card" onclick="goToLatestQuiz(1)">
                 <div class="img-box" style="background: linear-gradient(135deg, var(--gold), var(--accent)); font-size:5rem; color:white;">✍️</div>
                 <div class="card-body">
                     <span class="tag" style="background: var(--text-main);">Tương tác</span>
@@ -243,159 +243,137 @@
         <h2 class="section-title">Hệ thống Bài Test Hàng Tuần</h2>
         
         <div class="quiz-nav">
-            <div class="quiz-nav-btn" id="btn-q1" onclick="switchQuiz(1)">Bài test 1</div>
-            <div class="quiz-nav-btn" id="btn-q2" onclick="switchQuiz(2)">Bài test 2</div>
-            <div class="quiz-nav-btn active" id="btn-q3" onclick="switchQuiz(3)">Bài test 3 (Mới nhất)</div>
-        </div>
+            <div class="quiz-nav-btn active" id="btn-q1" onclick="switchQuiz(1)">Bài test 1: Quốc hội (Mới nhất)</div>
+            </div>
         
         <div class="interactive-box">
             
-            <div id="quiz-1" class="quiz-content" style="display:none;">
-                <h3 style="color: var(--primary); margin-top:0;">Bài Test 1: Đang cập nhật</h3>
-                <p style="color: var(--text-muted); margin-bottom: 25px;">Nội dung bài test 1 sẽ sớm được cập nhật.</p>
-                <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 1: Đây là câu hỏi mẫu, đáp án đúng là A?</p>
-                    <label class="quiz-option"><input type="radio" name="q1_1" value="correct"> A. Đúng</label>
-                    <label class="quiz-option"><input type="radio" name="q1_1" value="wrong"> B. Sai</label>
-                </div>
-                <button class="primary" onclick="checkQuiz(1)">Nộp Bài</button>
-            </div>
-
-            <div id="quiz-2" class="quiz-content" style="display:none;">
-                <h3 style="color: var(--primary); margin-top:0;">Bài Test 2: Đang cập nhật</h3>
-                <p style="color: var(--text-muted); margin-bottom: 25px;">Nội dung bài test 2 sẽ sớm được cập nhật.</p>
-                <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 1: Đây là câu hỏi mẫu, đáp án đúng là B?</p>
-                    <label class="quiz-option"><input type="radio" name="q2_1" value="wrong"> A. Sai</label>
-                    <label class="quiz-option"><input type="radio" name="q2_1" value="correct"> B. Đúng</label>
-                </div>
-                <button class="primary" onclick="checkQuiz(2)">Nộp Bài</button>
-            </div>
-
-            <div id="quiz-3" class="quiz-content">
-                <h3 style="color: var(--primary); margin-top:0;">Bài Test 3: Kiến thức Pháp lý và Tổ chức Quốc hội</h3>
+            <div id="quiz-1" class="quiz-content">
+                <h3 style="color: var(--primary); margin-top:0;">Bài Test 1: Kiến thức Pháp lý và Tổ chức Quốc hội</h3>
                 <p style="color: var(--text-muted); margin-bottom: 25px;">Hãy hoàn thành toàn bộ 20 câu hỏi dưới đây để biết điểm số của bạn nhé!</p>
 
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 1: Vị trí pháp lý của Quốc hội được xác định như thế nào trong hệ thống bộ máy nhà nước Việt Nam?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_1" value="wrong"> A. Cơ quan hành pháp cao nhất của nước Cộng hoà XHCN Việt Nam.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_1" value="wrong"> B. Cơ quan xét xử cao nhất của nước Cộng hoà XHCN Việt Nam.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_1" value="correct"> C. Cơ quan đại biểu cao nhất của Nhân dân, cơ quan quyền lực nhà nước cao nhất.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_1" value="wrong"> D. Cơ quan kiểm sát hoạt động tư pháp cao nhất.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_1" value="wrong"> A. Cơ quan hành pháp cao nhất của nước Cộng hoà XHCN Việt Nam.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_1" value="wrong"> B. Cơ quan xét xử cao nhất của nước Cộng hoà XHCN Việt Nam.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_1" value="correct"> C. Cơ quan đại biểu cao nhất của Nhân dân, cơ quan quyền lực nhà nước cao nhất.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_1" value="wrong"> D. Cơ quan kiểm sát hoạt động tư pháp cao nhất.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 2: Theo quy định, tổng số đại biểu Quốc hội tối đa là bao nhiêu người?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_2" value="wrong"> A. 450 người.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_2" value="correct"> B. 500 người.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_2" value="wrong"> C. 550 người.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_2" value="wrong"> D. 600 người.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_2" value="wrong"> A. 450 người.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_2" value="correct"> B. 500 người.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_2" value="wrong"> C. 550 người.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_2" value="wrong"> D. 600 người.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 3: Chủ thể nào có thẩm quyền ký chứng thực Hiến pháp, luật và nghị quyết của Quốc hội?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_3" value="wrong"> A. Chủ tịch nước.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_3" value="correct"> B. Chủ tịch Quốc hội.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_3" value="wrong"> C. Tổng thư ký Quốc hội.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_3" value="wrong"> D. Thủ tướng Chính phủ.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_3" value="wrong"> A. Chủ tịch nước.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_3" value="correct"> B. Chủ tịch Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_3" value="wrong"> C. Tổng thư ký Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_3" value="wrong"> D. Thủ tướng Chính phủ.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 4: Cơ quan nào đảm nhiệm vai trò là cơ quan thường trực của Quốc hội?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_4" value="wrong"> A. Hội đồng dân tộc.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_4" value="wrong"> B. Văn phòng Quốc hội.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_4" value="correct"> C. Ủy ban Thường vụ Quốc hội.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_4" value="wrong"> D. Ban Công tác đại biểu.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_4" value="wrong"> A. Hội đồng dân tộc.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_4" value="wrong"> B. Văn phòng Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_4" value="correct"> C. Ủy ban Thường vụ Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_4" value="wrong"> D. Ban Công tác đại biểu.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 5: Nhiệm kỳ của mỗi khóa Quốc hội được quy định kéo dài trong bao nhiêu năm?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_5" value="wrong"> A. 04 năm.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_5" value="correct"> B. 05 năm.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_5" value="wrong"> C. 06 năm.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_5" value="wrong"> D. 07 năm.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_5" value="wrong"> A. 04 năm.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_5" value="correct"> B. 05 năm.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_5" value="wrong"> C. 06 năm.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_5" value="wrong"> D. 07 năm.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 6: Việc kéo dài nhiệm kỳ của một khóa Quốc hội không được quá bao lâu (ngoại trừ trường hợp có chiến tranh)?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_6" value="wrong"> A. 06 tháng.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_6" value="wrong"> B. 09 tháng.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_6" value="correct"> C. 12 tháng.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_6" value="wrong"> D. 24 tháng.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_6" value="wrong"> A. 06 tháng.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_6" value="wrong"> B. 09 tháng.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_6" value="correct"> C. 12 tháng.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_6" value="wrong"> D. 24 tháng.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 7: Tỷ lệ biểu quyết tán thành tối thiểu để Quốc hội quyết định việc rút ngắn hoặc kéo dài nhiệm kỳ của chính mình là bao nhiêu?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_7" value="wrong"> A. Ít nhất quá nửa tổng số đại biểu Quốc hội.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_7" value="correct"> B. Ít nhất hai phần ba tổng số đại biểu Quốc hội.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_7" value="wrong"> C. Ít nhất ba phần tư tổng số đại biểu Quốc hội.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_7" value="wrong"> D. Tuyệt đối 100% đại biểu tham gia kỳ họp.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_7" value="wrong"> A. Ít nhất quá nửa tổng số đại biểu Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_7" value="correct"> B. Ít nhất hai phần ba tổng số đại biểu Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_7" value="wrong"> C. Ít nhất ba phần tư tổng số đại biểu Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_7" value="wrong"> D. Tuyệt đối 100% đại biểu tham gia kỳ họp.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 8: Quốc hội làm việc theo chế độ nào để đảm bảo tính dân chủ và pháp quyền?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_8" value="wrong"> A. Chế độ tập trung dân chủ.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_8" value="correct"> B. Chế độ hội nghị và quyết định theo đa số.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_8" value="wrong"> C. Chế độ thủ trưởng.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_8" value="wrong"> D. Chế độ biểu quyết của Chủ tịch Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_8" value="wrong"> A. Chế độ tập trung dân chủ.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_8" value="correct"> B. Chế độ hội nghị và quyết định theo đa số.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_8" value="wrong"> C. Chế độ thủ trưởng.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_8" value="wrong"> D. Chế độ biểu quyết của Chủ tịch Quốc hội.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 9: Đại biểu Quốc hội hoạt động không chuyên trách phải dành ít nhất bao nhiêu thời gian làm việc trong năm để thực hiện nhiệm vụ đại biểu?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_9" value="wrong"> A. Ít nhất một phần tư thời gian.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_9" value="correct"> B. Ít nhất một phần ba thời gian.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_9" value="wrong"> C. Ít nhất một nửa thời gian.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_9" value="wrong"> D. Ít nhất hai phần ba thời gian.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_9" value="wrong"> A. Ít nhất một phần tư thời gian.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_9" value="correct"> B. Ít nhất một phần ba thời gian.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_9" value="wrong"> C. Ít nhất một nửa thời gian.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_9" value="wrong"> D. Ít nhất hai phần ba thời gian.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 10: Số lượng đại biểu Quốc hội hoạt động chuyên trách phải đạt tỷ lệ tối thiểu là bao nhiêu phần trăm tổng số đại biểu?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_10" value="wrong"> A. Ít nhất 30%.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_10" value="wrong"> B. Ít nhất 35%.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_10" value="correct"> C. Ít nhất 40%.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_10" value="wrong"> D. Ít nhất 45%.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_10" value="wrong"> A. Ít nhất 30%.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_10" value="wrong"> B. Ít nhất 35%.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_10" value="correct"> C. Ít nhất 40%.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_10" value="wrong"> D. Ít nhất 45%.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 11: Chủ thể nào có thẩm quyền yêu cầu tổ chức kỳ họp không thường lệ (bất thường) của Quốc hội?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_11" value="correct"> A. Chủ tịch nước, UBTVQH, Thủ tướng Chính phủ hoặc ít nhất 1/3 tổng số ĐBQH.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_11" value="wrong"> B. Ít nhất một nửa tổng số đại biểu Quốc hội.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_11" value="wrong"> C. Chủ tịch Ủy ban Trung ương MTTQ Việt Nam.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_11" value="wrong"> D. Ban Công tác đại biểu.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_11" value="correct"> A. Chủ tịch nước, UBTVQH, Thủ tướng Chính phủ hoặc ít nhất 1/3 tổng số ĐBQH.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_11" value="wrong"> B. Ít nhất một nửa tổng số đại biểu Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_11" value="wrong"> C. Chủ tịch Ủy ban Trung ương MTTQ Việt Nam.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_11" value="wrong"> D. Ban Công tác đại biểu.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 12: Cơ quan nào có thẩm quyền bãi bỏ văn bản của Hội đồng nhân dân cấp tỉnh trái với Hiến pháp và pháp luật?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_12" value="correct"> A. Chính phủ.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_12" value="wrong"> B. Ủy ban Thường vụ Quốc hội.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_12" value="wrong"> C. Tòa án nhân dân tối cao.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_12" value="wrong"> D. Bộ Tư pháp.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_12" value="correct"> A. Chính phủ.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_12" value="wrong"> B. Ủy ban Thường vụ Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_12" value="wrong"> C. Tòa án nhân dân tối cao.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_12" value="wrong"> D. Bộ Tư pháp.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 13: Chủ thể nào nắm giữ thẩm quyền phê chuẩn chức danh Phó Chủ nhiệm và Ủy viên của các Ủy ban thuộc Quốc hội?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_13" value="wrong"> A. Quốc hội bầu trực tiếp.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_13" value="correct"> B. Ủy ban Thường vụ Quốc hội.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_13" value="wrong"> C. Chủ nhiệm Ủy ban của Quốc hội.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_13" value="wrong"> D. Chủ tịch Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_13" value="wrong"> A. Quốc hội bầu trực tiếp.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_13" value="correct"> B. Ủy ban Thường vụ Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_13" value="wrong"> C. Chủ nhiệm Ủy ban của Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_13" value="wrong"> D. Chủ tịch Quốc hội.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 14: Theo quy định pháp luật, người phát ngôn chính thức của Quốc hội và Ủy ban Thường vụ Quốc hội là ai?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_14" value="wrong"> A. Chủ tịch Quốc hội.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_14" value="wrong"> B. Phó Chủ tịch Quốc hội.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_14" value="correct"> C. Tổng thư ký Quốc hội – Chủ nhiệm Văn phòng Quốc hội.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_14" value="wrong"> D. Chủ nhiệm Ủy ban Pháp luật.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_14" value="wrong"> A. Chủ tịch Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_14" value="wrong"> B. Phó Chủ tịch Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_14" value="correct"> C. Tổng thư ký Quốc hội – Chủ nhiệm Văn phòng Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_14" value="wrong"> D. Chủ nhiệm Ủy ban Pháp luật.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 15: Dự án luật phải được gửi đến các đại biểu Quốc hội chậm nhất là bao nhiêu ngày trước ngày khai mạc kỳ họp?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_15" value="wrong"> A. 15 ngày.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_15" value="correct"> B. 20 ngày.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_15" value="wrong"> C. 30 ngày.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_15" value="wrong"> D. 45 ngày.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_15" value="wrong"> A. 15 ngày.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_15" value="correct"> B. 20 ngày.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_15" value="wrong"> C. 30 ngày.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_15" value="wrong"> D. 45 ngày.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 16: Cơ quan nào có thẩm quyền quyết định biên chế công chức của Văn phòng Quốc hội và các cơ quan tư pháp trung ương?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_16" value="wrong"> A. Bộ Nội vụ.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_16" value="wrong"> B. Chính phủ.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_16" value="correct"> C. Ủy ban Thường vụ Quốc hội.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_16" value="wrong"> D. Bộ Tài chính.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_16" value="wrong"> A. Bộ Nội vụ.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_16" value="wrong"> B. Chính phủ.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_16" value="correct"> C. Ủy ban Thường vụ Quốc hội.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_16" value="wrong"> D. Bộ Tài chính.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 17: Ý kiến phát biểu của đại biểu Quốc hội tại các phiên họp tổ hoặc đoàn đại biểu có giá trị pháp lý như thế nào?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_17" value="wrong"> A. Chỉ mang tính chất tham khảo.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_17" value="wrong"> B. Có giá trị thấp hơn ý kiến tại phiên toàn thể.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_17" value="correct"> C. Có giá trị như nhau với ý kiến tại phiên họp toàn thể.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_17" value="wrong"> D. Phải được phát biểu lại tại phiên toàn thể mới có giá trị.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_17" value="wrong"> A. Chỉ mang tính chất tham khảo.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_17" value="wrong"> B. Có giá trị thấp hơn ý kiến tại phiên toàn thể.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_17" value="correct"> C. Có giá trị như nhau với ý kiến tại phiên họp toàn thể.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_17" value="wrong"> D. Phải được phát biểu lại tại phiên toàn thể mới có giá trị.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 18: Kỳ họp thứ nhất của Quốc hội khóa mới phải được triệu tập chậm nhất là bao nhiêu ngày kể từ ngày bầu cử?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_18" value="wrong"> A. 30 ngày.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_18" value="wrong"> B. 45 ngày.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_18" value="correct"> C. 60 ngày.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_18" value="wrong"> D. 90 ngày.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_18" value="wrong"> A. 30 ngày.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_18" value="wrong"> B. 45 ngày.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_18" value="correct"> C. 60 ngày.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_18" value="wrong"> D. 90 ngày.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 19: Quyết định triệu tập kỳ họp thường lệ của Quốc hội phải được thông báo chậm nhất là bao nhiêu ngày trước ngày khai mạc?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_19" value="wrong"> A. 15 ngày.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_19" value="wrong"> B. 20 ngày.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_19" value="correct"> C. 30 ngày.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_19" value="wrong"> D. 45 ngày.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_19" value="wrong"> A. 15 ngày.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_19" value="wrong"> B. 20 ngày.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_19" value="correct"> C. 30 ngày.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_19" value="wrong"> D. 45 ngày.</label>
                 </div>
                 <div class="quiz-question"><p style="font-weight: 700; font-size: 1.05rem;">Câu 20: Chủ thể nào có thẩm quyền đề nghị bắt, giam giữ, khởi tố hoặc khám xét nơi ở, nơi làm việc của đại biểu Quốc hội?</p>
-                    <label class="quiz-option"><input type="radio" name="q3_20" value="wrong"> A. Chủ tịch nước.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_20" value="wrong"> B. Bộ trưởng Bộ Công an.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_20" value="correct"> C. Viện trưởng Viện KSND tối cao.</label>
-                    <label class="quiz-option"><input type="radio" name="q3_20" value="wrong"> D. Chánh án TAND tối cao.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_20" value="wrong"> A. Chủ tịch nước.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_20" value="wrong"> B. Bộ trưởng Bộ Công an.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_20" value="correct"> C. Viện trưởng Viện KSND tối cao.</label>
+                    <label class="quiz-option"><input type="radio" name="q1_20" value="wrong"> D. Chánh án TAND tối cao.</label>
                 </div>
                 
-                <button class="primary" onclick="checkQuiz(3)">Nộp Bài</button>
+                <button class="primary" onclick="checkQuiz(1)">Nộp Bài Trắc Nghiệm</button>
             </div>
             
             <div id="quiz-result" style="margin-top: 25px; text-align: center; font-weight: 800; font-size: 1.3rem;"></div>
